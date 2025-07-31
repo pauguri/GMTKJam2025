@@ -10,7 +10,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private GameObject tagContainer;
     [SerializeField] private GameObject buttonPrefab;
     [SerializeField] private GameObject cleanerContainer;
-    [SerializeField] private GameObject tempContainer;
+    [SerializeField] private TemperatureDial tempDial;
 
     public Cleaners cleanersData;
     public GamePhase[] phases;
@@ -22,20 +22,12 @@ public class GameLogic : MonoBehaviour
     private List<Material> materialPool;
     private Material currentMaterial = null;
     private int currentCleaner = -1;
-    private int currentTemperature = -1;
 
     private bool isFirstCycle = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        for (int i = 0; i < temperatures.Length; i++)
-        {
-            GameObject button = Instantiate(buttonPrefab, tempContainer.transform);
-            button.GetComponentInChildren<TextMeshProUGUI>().text = temperatures[i];
-            button.GetComponent<Button>().onClick.AddListener(() => currentTemperature = Array.IndexOf(temperatures, button.GetComponentInChildren<TextMeshProUGUI>().text));
-        }
-
         StartPhase();
     }
 
@@ -88,7 +80,6 @@ public class GameLogic : MonoBehaviour
         materialPool.RemoveAt(materialPool.Count - 1);
 
         currentCleaner = -1;
-        currentTemperature = -1;
 
         if (tagContainer.transform.childCount > 0)
         {
@@ -103,17 +94,17 @@ public class GameLogic : MonoBehaviour
 
     public void SubmitWash()
     {
-        if (currentCleaner < 0 || currentTemperature < 0)
+        if (currentCleaner < 0 || tempDial.Value < 0)
         {
             Debug.Log("Please select a cleaner and a temperature.");
             return;
         }
         string[][] materialMatrix = currentMaterial.GetMatrix();
-        string matrixCell = materialMatrix[currentTemperature][currentCleaner];
+        string matrixCell = materialMatrix[tempDial.Value][currentCleaner];
         if (matrixCell.Length == 0)
         {
             score++;
-            Debug.Log($"Successfully cleaned {currentMaterial} with {cleanersData.cleaners[currentCleaner]} at {temperatures[currentTemperature]} temperature. Score: {score}");
+            Debug.Log($"Successfully cleaned {currentMaterial} with {cleanersData.cleaners[currentCleaner]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
 
             if (score >= phases[currentPhase].targetScore)
             {
