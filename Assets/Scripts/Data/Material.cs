@@ -1,0 +1,27 @@
+using System;
+using UnityEngine;
+
+[Serializable]
+public class Material
+{
+    public string name;
+    public string description;
+    public Texture2D icon;
+    public string[] freezingMessages = new string[5];
+    public string[] coldMessages = new string[5];
+    public string[] normalMessages = new string[5];
+    public string[] hotMessages = new string[5];
+    public string[] hellMessages = new string[5];
+
+    public string[][] GetMatrix()
+    {
+        return new string[][]
+        {
+            freezingMessages,
+            coldMessages,
+            normalMessages,
+            hotMessages,
+            hellMessages
+        };
+    }
+}

@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d72987ece7431249b22d7235a97f9ac, type: 3}
+  m_Name: Phase1
+  m_EditorClassIdentifier: 
+  materials:
+  - name: Synthetic
+    description: Looks like a man-made everyday fabric
+    icon: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+    freezingMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    coldMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    normalMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    hotMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    hellMessages:
+    - has burned to ashes
+    - has burned to ashes
+    - has burned to ashes
+    - has disintegrated
+    - has burned to ashes
+  - name: Wool
+    description: Looks like a very common everyday fabric
+    icon: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+    freezingMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    coldMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    normalMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    hotMessages:
+    - has shrunk
+    - has shrunk
+    - has shrunk
+    - has disintegrated
+    - has shrunk
+    hellMessages:
+    - has burned to ashes
+    - has burned to ashes
+    - has burned to ashes
+    - has disintegrated
+    - has burned to ashes
+  - name: Silk
+    description: Looks like a common but delicate fabric
+    icon: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+    freezingMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    coldMessages:
+    - 
+    - 
+    - 
+    - disintegrated
+    - 
+    normalMessages:
+    - has shrunk
+    - has shrunk
+    - has shrunk
+    - has disintegrated
+    - has shrunk
+    hotMessages:
+    - has shrunk
+    - has shrunk
+    - has shrunk
+    - has disintegrated
+    - has shrunk
+    hellMessages:
+    - has burned to ashes
+    - has burned to ashes
+    - has burned to ashes
+    - has disintegrated
+    - has burned to ashes
+  - name: Ice
+    description: It's see-though and extremely cold to the touch
+    icon: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+    freezingMessages:
+    - 
+    - 
+    - has melted
+    - has disintegrated
+    - 
+    coldMessages:
+    - has melted
+    - has melted
+    - has melted
+    - has disintegrated
+    - has melted
+    normalMessages:
+    - has melted
+    - has melted
+    - has melted
+    - has disintegrated
+    - has melted
+    hotMessages:
+    - has melted
+    - has melted
+    - has melted
+    - has disintegrated
+    - has melted
+    hellMessages:
+    - has melted
+    - has melted
+    - has melted
+    - has disintegrated
+    - has melted
+  targetScore: 4
