@@ -15,7 +15,8 @@ MonoBehaviour:
   materials:
   - name: Synthetic
     description: Looks like a man-made everyday fabric
-    icon: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 0}
     freezingMessages:
     - 
     - 
@@ -49,6 +50,7 @@ MonoBehaviour:
   - name: Wool
     description: Looks like a very common everyday fabric
     icon: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 0}
     freezingMessages:
     - 
     - 
@@ -82,6 +84,7 @@ MonoBehaviour:
   - name: Silk
     description: Looks like a common but delicate fabric
     icon: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 0}
     freezingMessages:
     - 
     - 
@@ -115,6 +118,7 @@ MonoBehaviour:
   - name: Ice
     description: It's see-though and extremely cold to the touch
     icon: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 0}
     freezingMessages:
     - 
     - 
