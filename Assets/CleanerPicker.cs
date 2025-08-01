@@ -43,6 +43,16 @@ public class CleanerPicker : MonoBehaviour
         if (!selectedBottles.Contains(bottle)) return;
     }
 
+    public void UnlockBottle(int index)
+    {
+        Debug.Log(index < 1);
+        Debug.Log((index - 1) > lockedBottles.Length);
+        if (index < 1 || (index - 1) > lockedBottles.Length) return;
+        Debug.Log($"Unlocking bottle at index {index - 1}");
+        lockedBottles[index - 1].SetActive(false);
+        clanerBottles[index - 1].gameObject.SetActive(true);
+    }
+
     public void Clear()
     {
         foreach (var bottle in selectedBottles)

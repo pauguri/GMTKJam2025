@@ -150,7 +150,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6779752833725897209, guid: 2f23248f00d5ea04983349e930e47b74, type: 3}
+  - {fileID: 2100000, guid: 30f84e9b6147f26488617ae2468b56b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -236,7 +236,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6051022360936502160, guid: 2f23248f00d5ea04983349e930e47b74, type: 3}
+  - {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 702199393160888912}
   - component: {fileID: 7048531800579438154}
   m_Layer: 0
-  m_Name: Cleaner
+  m_Name: Cleaner4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -370,6 +370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827f6d8ea32f07c44b981fce06479a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
+  cleanerPicker: {fileID: 0}
 --- !u!1 &5440112979949799062
 GameObject:
   m_ObjectHideFlags: 0

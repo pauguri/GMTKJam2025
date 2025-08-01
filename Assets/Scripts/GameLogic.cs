@@ -36,6 +36,9 @@ public class GameLogic : MonoBehaviour
             return; // End the game or reset to the first phase
         }
 
+        Debug.Log($"Starting phase {currentPhase + 1} with target score: {phases[currentPhase].targetScore}");
+        score = 0;
+        cleanerPicker.UnlockBottle(currentPhase);
         //if (cleanerContainer.transform.childCount > 0)
         //{
         //    foreach (Transform child in cleanerContainer.transform)
