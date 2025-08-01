@@ -10,21 +10,25 @@ public class TemperatureDial : MonoBehaviour
     private int snappedPosition = 2;
     public int Value => snappedPosition;
 
+    private void Start()
+    {
+        if (PlayerInputHook.Instance != null)
+        {
+
+            PlayerInputHook.Instance.ClickEvent += OnClick;
+        }
+    }
+
     public void OnClick(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            Vector2 mousePosition = Mouse.current.position.ReadValue();
-            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
 
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (PlayerInputHook.Instance.raycastHit.transform == transform)
             {
-                if (hit.transform == transform)
-                {
-                    ;
-                    isHolding = true;
-                    startPoint = mousePosition;
-                }
+                ;
+                isHolding = true;
+                startPoint = PlayerInputHook.Instance.mousePosition;
             }
         }
         else if (context.canceled)
@@ -36,9 +40,8 @@ public class TemperatureDial : MonoBehaviour
     private void Update()
     {
         if (!isHolding) return;
-        Vector2 mousePosition = Mouse.current.position.ReadValue();
-        float direction = (startPoint.y - mousePosition.y) * 0.02f; // Adjust sensitivity as needed
-        startPoint = mousePosition; // Update startPoint to the current position for continuous dragging
+        float direction = (startPoint.y - PlayerInputHook.Instance.mousePosition.y) * 0.02f; // Adjust sensitivity as needed
+        startPoint = PlayerInputHook.Instance.mousePosition; // Update startPoint to the current position for continuous dragging
         // limit rotation at 0 and 180
         position = Mathf.Clamp(position + direction, 0, 4);
         int newSnappedPosition = Mathf.RoundToInt(position);
@@ -46,6 +49,14 @@ public class TemperatureDial : MonoBehaviour
         {
             transform.DOLocalRotate(new Vector3(0, 0, newSnappedPosition * (-180 / 4)), 0.1f).SetEase(Ease.OutBack);
             snappedPosition = newSnappedPosition;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (PlayerInputHook.Instance != null)
+        {
+            PlayerInputHook.Instance.ClickEvent -= OnClick;
         }
     }
 }

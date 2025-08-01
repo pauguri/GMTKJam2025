@@ -1,15 +1,13 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
     [SerializeField] private GameObject tagPrefab;
     [SerializeField] private GameObject tagContainer;
     [SerializeField] private GameObject buttonPrefab;
-    [SerializeField] private GameObject cleanerContainer;
+    [SerializeField] private CleanerPicker cleanerPicker;
     [SerializeField] private TemperatureDial tempDial;
 
     public Cleaners cleanersData;
@@ -19,9 +17,8 @@ public class GameLogic : MonoBehaviour
 
     [HideInInspector] public int currentPhase = 0;
     [HideInInspector] public int score = 0;
-    private List<Material> materialPool;
-    private Material currentMaterial = null;
-    private int currentCleaner = -1;
+    private List<GameMaterial> materialPool;
+    private GameMaterial currentMaterial = null;
 
     private bool isFirstCycle = true;
 
@@ -39,19 +36,19 @@ public class GameLogic : MonoBehaviour
             return; // End the game or reset to the first phase
         }
 
-        if (cleanerContainer.transform.childCount > 0)
-        {
-            foreach (Transform child in cleanerContainer.transform)
-            {
-                Destroy(child.gameObject);
-            }
-        }
-        for (int i = 0; i <= currentPhase; i++)
-        {
-            GameObject button = Instantiate(buttonPrefab, cleanerContainer.transform);
-            button.GetComponentInChildren<TextMeshProUGUI>().text = cleanersData.cleaners[i];
-            button.GetComponent<Button>().onClick.AddListener(() => currentCleaner = Array.IndexOf(cleanersData.cleaners, button.GetComponentInChildren<TextMeshProUGUI>().text));
-        }
+        //if (cleanerContainer.transform.childCount > 0)
+        //{
+        //    foreach (Transform child in cleanerContainer.transform)
+        //    {
+        //        Destroy(child.gameObject);
+        //    }
+        //}
+        //for (int i = 0; i <= currentPhase; i++)
+        //{
+        //    GameObject button = Instantiate(buttonPrefab, cleanerContainer.transform);
+        //    button.GetComponentInChildren<TextMeshProUGUI>().text = cleanersData.cleaners[i];
+        //    button.GetComponent<Button>().onClick.AddListener(() => currentCleaner = Array.IndexOf(cleanersData.cleaners, button.GetComponentInChildren<TextMeshProUGUI>().text));
+        //}
 
         GenerateClothes();
     }
@@ -62,7 +59,7 @@ public class GameLogic : MonoBehaviour
 
         if (materialPool == null || materialPool.Count == 0)
         {
-            materialPool = new List<Material>(phase.materials);
+            materialPool = new List<GameMaterial>(phase.materials);
 
             // Don't shuffle on the first cycle, it acts as a tutorial
             if (currentPhase == 0 && isFirstCycle)
@@ -79,7 +76,7 @@ public class GameLogic : MonoBehaviour
         currentMaterial = materialPool[^1];
         materialPool.RemoveAt(materialPool.Count - 1);
 
-        currentCleaner = -1;
+        cleanerPicker.Clear();
 
         if (tagContainer.transform.childCount > 0)
         {
@@ -94,17 +91,17 @@ public class GameLogic : MonoBehaviour
 
     public void SubmitWash()
     {
-        if (currentCleaner < 0 || tempDial.Value < 0)
+        if (cleanerPicker.Value.Length == 0 || tempDial.Value < 0)
         {
             Debug.Log("Please select a cleaner and a temperature.");
             return;
         }
         string[][] materialMatrix = currentMaterial.GetMatrix();
-        string matrixCell = materialMatrix[tempDial.Value][currentCleaner];
+        string matrixCell = materialMatrix[tempDial.Value][cleanerPicker.Value[0]];
         if (matrixCell.Length == 0)
         {
             score++;
-            Debug.Log($"Successfully cleaned {currentMaterial} with {cleanersData.cleaners[currentCleaner]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
+            Debug.Log($"Successfully cleaned {currentMaterial} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
 
             if (score >= phases[currentPhase].targetScore)
             {

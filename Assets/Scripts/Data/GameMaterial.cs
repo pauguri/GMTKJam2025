@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class Material
+public class GameMaterial
 {
     public string name;
     public string description;

@@ -3,6 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GamePhase", menuName = "Scriptable Objects/Game Phase")]
 public class GamePhase : ScriptableObject
 {
-    public Material[] materials;
+    public GameMaterial[] materials;
     public int targetScore;
 }
