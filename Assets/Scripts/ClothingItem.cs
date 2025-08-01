@@ -15,8 +15,10 @@ public class ClothingItem : MonoBehaviour
     [SerializeField] private Image extraImage2;
     [HideInInspector] public ModifierType modifier;
     [HideInInspector] public GameMaterial gameMaterial;
-
+    public ClothesManager clothesManager;
     [SerializeField] private Outline outline;
+
+    [HideInInspector] public string errorMessage;
     //private Animator animator;
     private bool isSelected = false;
     private bool isHovered = false;
@@ -91,7 +93,7 @@ public class ClothingItem : MonoBehaviour
         {
             //animator.SetBool("selected", true);
             DOTween.To(() => outline.OutlineColor.a, x => outline.OutlineColor = new Color(1, 1, 1, x), 1f, 0.15f);
-            //cleanerPicker.HandleSelectBottle(this);
+            clothesManager.HandleSelectItem(this);
         }
         else
         {
@@ -104,7 +106,7 @@ public class ClothingItem : MonoBehaviour
             {
                 DOTween.To(() => outline.OutlineColor.a, x => outline.OutlineColor = new Color(1, 1, 1, x), 0f, 0.15f);
             }
-            //cleanerPicker.HandleDeselectBottle(this);
+            clothesManager.HandleDeselectItem(this);
         }
     }
 

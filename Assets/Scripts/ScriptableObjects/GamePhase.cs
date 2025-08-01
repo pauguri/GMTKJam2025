@@ -4,6 +4,7 @@ using UnityEngine;
 public class GamePhase : ScriptableObject
 {
     public GameMaterial[] materials;
-    public Modifier[] modifiers;
+    public ModifierType[] modifiers;
     public int targetScore;
+    public int shownClothes = 1;
 }

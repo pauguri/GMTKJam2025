@@ -54,10 +54,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 2.06
   m_Height: 4.61
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.75, y: 0, z: 0}
 --- !u!114 &9195137359682601234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +78,6 @@ MonoBehaviour:
   extraImage1: {fileID: 3204633418073884700}
   extraImage2: {fileID: 7021575664576696069}
   modifier: 0
-  outline: {fileID: 3931292093252104591}
   gameMaterial:
     name: 
     description: 
@@ -115,6 +114,9 @@ MonoBehaviour:
     - 
     - 
     allowedModifiers: 
+  clothesManager: {fileID: 0}
+  outline: {fileID: 3931292093252104591}
+  errorMessage: 
 --- !u!1 &1895294852920401751
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +433,7 @@ Transform:
   m_GameObject: {fileID: 4618285063956111710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 2.6, y: 1.68, z: 2.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -503,8 +505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 5
+  outlineColor: {r: 1, g: 1, b: 1, a: 0}
+  outlineWidth: 7
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -575,7 +577,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -715,7 +717,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -734,7 +736,6 @@ GameObject:
   - component: {fileID: 6876049285212470794}
   - component: {fileID: 3488237353717930937}
   - component: {fileID: 8277316279053620659}
-  - component: {fileID: 1133460233074264206}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -759,7 +760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.06, y: -1.27}
+  m_AnchoredPosition: {x: 1, y: -1.27}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3488237353717930937
@@ -808,20 +809,3 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &1133460233074264206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8737772685600271203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295

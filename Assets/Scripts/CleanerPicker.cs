@@ -10,12 +10,6 @@ public class CleanerPicker : MonoBehaviour
     private List<CleanerBottle> selectedBottles = new List<CleanerBottle>();
     public int[] Value => selectedBottles.Select((bottle) => bottle.index).ToArray();
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
     public void HandleSelectBottle(CleanerBottle bottle)
     {
         if (selectedBottles.Contains(bottle)) return;
@@ -41,6 +35,7 @@ public class CleanerPicker : MonoBehaviour
     public void HandleDeselectBottle(CleanerBottle bottle)
     {
         if (!selectedBottles.Contains(bottle)) return;
+        selectedBottles.Remove(bottle);
     }
 
     public void UnlockBottle(int index)
@@ -55,7 +50,8 @@ public class CleanerPicker : MonoBehaviour
 
     public void Clear()
     {
-        foreach (var bottle in selectedBottles)
+        var bottlesToRemove = selectedBottles.ToList();
+        foreach (var bottle in bottlesToRemove)
         {
             bottle.SetSelected(false);
         }

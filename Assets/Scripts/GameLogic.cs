@@ -1,14 +1,14 @@
 using System.Collections.Generic;
-using TMPro;
+using System.Linq;
 using UnityEngine;
 
 public class GameLogic : MonoBehaviour
 {
     [SerializeField] private GameObject tagPrefab;
     [SerializeField] private GameObject tagContainer;
-    [SerializeField] private GameObject buttonPrefab;
     [SerializeField] private CleanerPicker cleanerPicker;
     [SerializeField] private TemperatureDial tempDial;
+    [SerializeField] private ClothesManager clothesManager;
 
     public Cleaners cleanersData;
     public GamePhase[] phases;
@@ -17,8 +17,7 @@ public class GameLogic : MonoBehaviour
 
     [HideInInspector] public int currentPhase = 0;
     [HideInInspector] public int score = 0;
-    private List<GameMaterial> materialPool;
-    private GameMaterial currentMaterial = null;
+    private List<GameMaterial> materialPool = new List<GameMaterial>();
 
     private bool isFirstCycle = true;
 
@@ -39,19 +38,6 @@ public class GameLogic : MonoBehaviour
         Debug.Log($"Starting phase {currentPhase + 1} with target score: {phases[currentPhase].targetScore}");
         score = 0;
         cleanerPicker.UnlockBottle(currentPhase);
-        //if (cleanerContainer.transform.childCount > 0)
-        //{
-        //    foreach (Transform child in cleanerContainer.transform)
-        //    {
-        //        Destroy(child.gameObject);
-        //    }
-        //}
-        //for (int i = 0; i <= currentPhase; i++)
-        //{
-        //    GameObject button = Instantiate(buttonPrefab, cleanerContainer.transform);
-        //    button.GetComponentInChildren<TextMeshProUGUI>().text = cleanersData.cleaners[i];
-        //    button.GetComponent<Button>().onClick.AddListener(() => currentCleaner = Array.IndexOf(cleanersData.cleaners, button.GetComponentInChildren<TextMeshProUGUI>().text));
-        //}
 
         GenerateClothes();
     }
@@ -59,69 +45,85 @@ public class GameLogic : MonoBehaviour
     private void GenerateClothes()
     {
         GamePhase phase = phases[currentPhase];
-
-        if (materialPool == null || materialPool.Count == 0)
-        {
-            materialPool = new List<GameMaterial>(phase.materials);
-
-            // Don't shuffle on the first cycle, it acts as a tutorial
-            if (currentPhase == 0 && isFirstCycle)
-            {
-                isFirstCycle = false;
-                materialPool.Reverse();
-            }
-            else
-            {
-                materialPool.Shuffle();
-            }
-        }
-
-        currentMaterial = materialPool[^1];
-        materialPool.RemoveAt(materialPool.Count - 1);
-
         cleanerPicker.Clear();
+        clothesManager.Clear();
+        clothesManager.shownClothes = phase.shownClothes;
+        clothesManager.clothesState = ClothesState.CanBeSelected;
 
-        if (tagContainer.transform.childCount > 0)
+        for (int i = 0; i < phase.shownClothes; i++)
         {
-            foreach (Transform child in tagContainer.transform)
+            if (materialPool == null || materialPool.Count == 0)
             {
-                Destroy(child.gameObject);
+                materialPool = new List<GameMaterial>(phase.materials);
+
+                // Don't shuffle on the first cycle, it acts as a tutorial
+                if (currentPhase == 0 && isFirstCycle)
+                {
+                    isFirstCycle = false;
+                    materialPool.Reverse();
+                }
+                else
+                {
+                    materialPool.Shuffle();
+                }
             }
+
+            var currentMaterial = materialPool[^1];
+            materialPool.RemoveAt(materialPool.Count - 1);
+
+            var availableModifiers = phases[currentPhase].modifiers.Intersect(currentMaterial.allowedModifiers).ToArray();
+            ModifierType currentModifier = ModifierType.None;
+            if (availableModifiers.Length > 0)
+            {
+                currentModifier = availableModifiers[Random.Range(0, availableModifiers.Length)];
+            }
+
+            clothesManager.CreateClothingItem(currentMaterial, currentModifier);
         }
-        GameObject instance = Instantiate(tagPrefab, tagContainer.transform);
-        instance.GetComponentInChildren<TextMeshProUGUI>().text = currentMaterial.name;
     }
 
     public void SubmitWash()
     {
-        if (cleanerPicker.Value.Length == 0 || tempDial.Value < 0)
+        if (cleanerPicker.Value.Length == 0 || tempDial.Value < 0 || clothesManager.Clothes.Length == 0)
         {
-            Debug.Log("Please select a cleaner and a temperature.");
+            Debug.Log("Please select at least one clothing item, one cleaner and a temperature.");
             return;
         }
-        string[][] materialMatrix = currentMaterial.GetMatrix();
-        string matrixCell = materialMatrix[tempDial.Value][cleanerPicker.Value[0]];
-        if (matrixCell.Length == 0)
-        {
-            score++;
-            Debug.Log($"Successfully cleaned {currentMaterial} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
 
-            if (score >= phases[currentPhase].targetScore)
+        clothesManager.clothesState = ClothesState.ShowsResult;
+        int correctClothes = 0;
+        foreach (ClothingItem item in clothesManager.Clothes)
+        {
+            string[][] materialMatrix = item.gameMaterial.GetMatrix();
+            string matrixCell = materialMatrix[tempDial.Value][cleanerPicker.Value[0]];
+            if (matrixCell.Length == 0)
             {
-                Debug.Log($"Congratulations! You've reached the target score of {phases[currentPhase].targetScore} for phase {currentPhase + 1}. Moving to the next phase.");
-                currentPhase++;
-                StartPhase();
-                return;
+                score++;
+
+                Debug.Log($"Successfully cleaned {item.gameMaterial.name} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
+
+                if (score >= phases[currentPhase].targetScore)
+                {
+                    Debug.Log($"Congratulations! You've reached the target score of {phases[currentPhase].targetScore} for phase {currentPhase + 1}. Moving to the next phase.");
+                    currentPhase++;
+                    StartPhase();
+                    return;
+                }
+            }
+            else
+            {
+                //score--;
+                //if (score < 0)
+                //{
+                //    score = 0;
+                //}
+                Debug.Log($"The {item.gameMaterial.name} shirt {matrixCell}. Score: {score}");
             }
         }
-        else
+
+        if (correctClothes > 1)
         {
-            score--;
-            if (score < 0)
-            {
-                score = 0; // Prevent negative score
-            }
-            Debug.Log($"The {currentMaterial.name} shirt {matrixCell}. Score: {score}");
+            score += correctClothes - 1;
         }
 
         GenerateClothes();
