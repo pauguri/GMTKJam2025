@@ -133,7 +133,7 @@ public class GameLogic : MonoBehaviour
             score += correctClothes - 1;
         }
 
-        progressBar.AnimateTo(Mathf.Min(score / phases[currentPhase].targetScore, 1));
+        progressBar.AnimateTo(Mathf.Min((float)score / phases[currentPhase].targetScore, 1f));
         if (score >= phases[currentPhase].targetScore)
         {
             Debug.Log($"Congratulations! You've reached the target score of {phases[currentPhase].targetScore} for phase {currentPhase + 1}. Moving to the next phase.");
