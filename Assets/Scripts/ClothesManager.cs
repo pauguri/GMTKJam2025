@@ -12,7 +12,8 @@ public class ClothesManager : MonoBehaviour
     [HideInInspector] public ClothesState clothesState = ClothesState.CanBeSelected;
     private List<ClothingItem> clothes = new List<ClothingItem>();
     private List<ClothingItem> selectedClothes = new List<ClothingItem>();
-    public ClothingItem[] Clothes => selectedClothes.ToArray();
+    public ClothingItem[] Clothes => clothes.ToArray();
+    public ClothingItem[] SelectedClothes => selectedClothes.ToArray();
 
     private void Start()
     {
@@ -53,6 +54,7 @@ public class ClothesManager : MonoBehaviour
             Destroy(item.gameObject);
         }
         clothes.Clear();
+        selectedClothes.Clear();
     }
 }
 

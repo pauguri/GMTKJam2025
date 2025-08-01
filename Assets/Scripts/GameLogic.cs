@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class GameLogic : MonoBehaviour
 {
-    [SerializeField] private GameObject tagPrefab;
-    [SerializeField] private GameObject tagContainer;
     [SerializeField] private CleanerPicker cleanerPicker;
     [SerializeField] private TemperatureDial tempDial;
     [SerializeField] private ClothesManager clothesManager;
+    [SerializeField] private ProgressBar progressBar;
 
     public Cleaners cleanersData;
     public GamePhase[] phases;
@@ -24,6 +23,7 @@ public class GameLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        progressBar.SetPercent(0f);
         StartPhase();
     }
 
@@ -36,8 +36,9 @@ public class GameLogic : MonoBehaviour
         }
 
         Debug.Log($"Starting phase {currentPhase + 1} with target score: {phases[currentPhase].targetScore}");
-        score = 0;
+        progressBar.AnimateTo(0f);
         cleanerPicker.UnlockBottle(currentPhase);
+        clothesManager.shownClothes = phases[currentPhase].shownClothes;
 
         GenerateClothes();
     }
@@ -46,11 +47,25 @@ public class GameLogic : MonoBehaviour
     {
         GamePhase phase = phases[currentPhase];
         cleanerPicker.Clear();
-        clothesManager.Clear();
-        clothesManager.shownClothes = phase.shownClothes;
         clothesManager.clothesState = ClothesState.CanBeSelected;
 
-        for (int i = 0; i < phase.shownClothes; i++)
+        int amountToGenerate = phase.shownClothes;
+        if (clothesManager.Clothes.Length > 0)
+        {
+            var recycledClothes = clothesManager.Clothes.Except(clothesManager.SelectedClothes).ToArray();
+            clothesManager.Clear();
+            foreach (ClothingItem item in recycledClothes)
+            {
+                clothesManager.CreateClothingItem(item.gameMaterial, item.modifier);
+            }
+            amountToGenerate -= Mathf.Min(recycledClothes.Length, amountToGenerate);
+        }
+        else
+        {
+            clothesManager.Clear();
+        }
+
+        for (int i = 0; i < amountToGenerate; i++)
         {
             if (materialPool == null || materialPool.Count == 0)
             {
@@ -71,7 +86,7 @@ public class GameLogic : MonoBehaviour
             var currentMaterial = materialPool[^1];
             materialPool.RemoveAt(materialPool.Count - 1);
 
-            var availableModifiers = phases[currentPhase].modifiers.Intersect(currentMaterial.allowedModifiers).ToArray();
+            var availableModifiers = phase.modifiers.Intersect(currentMaterial.allowedModifiers).ToArray();
             ModifierType currentModifier = ModifierType.None;
             if (availableModifiers.Length > 0)
             {
@@ -84,7 +99,7 @@ public class GameLogic : MonoBehaviour
 
     public void SubmitWash()
     {
-        if (cleanerPicker.Value.Length == 0 || tempDial.Value < 0 || clothesManager.Clothes.Length == 0)
+        if (cleanerPicker.Value.Length == 0 || tempDial.Value < 0 || clothesManager.SelectedClothes.Length == 0)
         {
             Debug.Log("Please select at least one clothing item, one cleaner and a temperature.");
             return;
@@ -92,7 +107,7 @@ public class GameLogic : MonoBehaviour
 
         clothesManager.clothesState = ClothesState.ShowsResult;
         int correctClothes = 0;
-        foreach (ClothingItem item in clothesManager.Clothes)
+        foreach (ClothingItem item in clothesManager.SelectedClothes)
         {
             string[][] materialMatrix = item.gameMaterial.GetMatrix();
             string matrixCell = materialMatrix[tempDial.Value][cleanerPicker.Value[0]];
@@ -101,14 +116,6 @@ public class GameLogic : MonoBehaviour
                 score++;
 
                 Debug.Log($"Successfully cleaned {item.gameMaterial.name} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
-
-                if (score >= phases[currentPhase].targetScore)
-                {
-                    Debug.Log($"Congratulations! You've reached the target score of {phases[currentPhase].targetScore} for phase {currentPhase + 1}. Moving to the next phase.");
-                    currentPhase++;
-                    StartPhase();
-                    return;
-                }
             }
             else
             {
@@ -124,6 +131,16 @@ public class GameLogic : MonoBehaviour
         if (correctClothes > 1)
         {
             score += correctClothes - 1;
+        }
+
+        progressBar.AnimateTo(Mathf.Min(score / phases[currentPhase].targetScore, 1));
+        if (score >= phases[currentPhase].targetScore)
+        {
+            Debug.Log($"Congratulations! You've reached the target score of {phases[currentPhase].targetScore} for phase {currentPhase + 1}. Moving to the next phase.");
+            score = score - phases[currentPhase].targetScore;
+            currentPhase++;
+            StartPhase();
+            return;
         }
 
         GenerateClothes();
