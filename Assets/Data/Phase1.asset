@@ -13,49 +13,15 @@ MonoBehaviour:
   m_Name: Phase1
   m_EditorClassIdentifier: 
   materials:
-  - name: Synthetic
-    description: Looks like a man-made everyday fabric
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
-    freezingMessages:
-    - 
-    - 
-    - 
-    - has disintegrated
-    - 
-    coldMessages:
-    - 
-    - 
-    - 
-    - has disintegrated
-    - 
-    normalMessages:
-    - 
-    - 
-    - 
-    - has disintegrated
-    - 
-    hotMessages:
-    - 
-    - 
-    - 
-    - has disintegrated
-    - 
-    hellMessages:
-    - has burned to ashes
-    - has burned to ashes
-    - has burned to ashes
-    - has disintegrated
-    - has burned to ashes
-    allowedModifiers: 
   - name: Wool
-    description: Looks like a very common everyday fabric
+    description: It seems warm and fluffy it could fit everyone, even being a Laundry
+      Machine I would sleep on it
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
     - 
-    - 
+    - has been frozen
     - has disintegrated
     - 
     coldMessages:
@@ -71,20 +37,55 @@ MonoBehaviour:
     - has disintegrated
     - 
     hotMessages:
-    - has shrunk
-    - has shrunk
-    - has shrunk
+    - 
+    - 
+    - 
     - has disintegrated
-    - has shrunk
+    - has burned to ashes
     hellMessages:
     - has burned to ashes
     - has burned to ashes
+    - has burned to ashes
+    - has evaporate it
+    - has burned to ashes
+    allowedModifiers: 01000000
+  - name: Leather Cow
+    description: The most classical piece, the most premium brands fight for them
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - has frozen
+    - 
+    - has frozen
+    - 
+    - 
+    coldMessages:
+    - 
+    - 
+    - 
+    - 
+    - 
+    normalMessages:
+    - 
+    - 
+    - 
+    - 
+    - 
+    hotMessages:
+    - 
+    - has shrunk
+    - 
+    - has shrunk
+    - 
+    hellMessages:
+    - has burned to ashes
+    - fries
     - has burned to ashes
     - has disintegrated
     - has burned to ashes
     allowedModifiers: 
-  - name: Silk
-    description: Looks like a common but delicate fabric
+  - name: Cardboard
+    description: It would be a nice protector for a Pizza
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
@@ -97,18 +98,18 @@ MonoBehaviour:
     - 
     - 
     - 
-    - disintegrated
+    - has disintegrated
     - 
     normalMessages:
-    - has shrunk
-    - has shrunk
-    - has shrunk
+    - 
+    - 
+    - 
     - has disintegrated
     - has shrunk
     hotMessages:
-    - has shrunk
-    - has shrunk
-    - has shrunk
+    - 
+    - 
+    - 
     - has disintegrated
     - has shrunk
     hellMessages:
@@ -117,41 +118,77 @@ MonoBehaviour:
     - has burned to ashes
     - has disintegrated
     - has burned to ashes
+    allowedModifiers: 01000000
+  - name: Unicorn Fur
+    description: 'Hint: So lucky that it doesn''t comes with the horn it could have
+      taken my wires'
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - has frozen
+    - has frozen
+    - has disintegrated
+    - has been magically destroyed
+    coldMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - has been magically destroyed
+    normalMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    hotMessages:
+    - 
+    - has burned
+    - 
+    - has disintegrated
+    - has been magically destroyed
+    hellMessages:
+    - 
+    - has burned
+    - has burned
+    - has disintegrated
+    - has been magically destroyed
     allowedModifiers: 
-  - name: Ice
-    description: It's see-though and extremely cold to the touch
+  - name: Dalmata Fur
+    description: aaaaand with that I count 101
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
+    - has frozen
     - 
-    - 
-    - has melted
+    - has frozen
     - has disintegrated
     - 
     coldMessages:
-    - has melted
-    - has melted
-    - has melted
+    - 
+    - 
+    - 
     - has disintegrated
-    - has melted
+    - 
     normalMessages:
-    - has melted
-    - has melted
-    - has melted
+    - 
+    - 
+    - 
     - has disintegrated
-    - has melted
+    - 
     hotMessages:
-    - has melted
-    - has melted
-    - has melted
+    - 
+    - has burned
+    - 
     - has disintegrated
-    - has melted
+    - 
     hellMessages:
-    - has melted
-    - has melted
-    - has melted
+    - has burned
+    - fries
+    - has burned
     - has disintegrated
-    - has melted
+    - has burned
     allowedModifiers: 
   modifiers: 
   targetScore: 4

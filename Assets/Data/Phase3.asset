@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d72987ece7431249b22d7235a97f9ac, type: 3}
+  m_Name: Phase3
+  m_EditorClassIdentifier: 
+  materials:
+  - name: Mermaid Scales
+    description: Was she singing when was capturated?
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    coldMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    normalMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    hotMessages:
+    - 
+    - fries
+    - 
+    - has disintegrated
+    - has been cooked
+    hellMessages:
+    - 
+    - fries
+    - has losen all scales
+    - has evaporate it
+    - has been cooked
+    allowedModifiers: 
+  - name: Penguin Fur
+    description: It would be perfect for a meeting with your boss, they literally
+      born with the style
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - 
+    - 
+    - has evaporate it
+    - has evaporate it
+    coldMessages:
+    - 
+    - 
+    - 
+    - has evaporate it
+    - has evaporate it
+    normalMessages:
+    - 
+    - 
+    - 
+    - has evaporate it
+    - has evaporate it
+    hotMessages:
+    - has burned
+    - has burned
+    - 
+    - has evaporate it
+    - has evaporate it
+    hellMessages:
+    - has burned
+    - has burned
+    - 
+    - has disintegrated
+    - has disintegrated
+    allowedModifiers: 03000000
+  - name: Polar Bear Fur
+    description: I would love to go the the antartica to see one in real life.
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - 
+    - 
+    - has evaporate it
+    - has evaporate it
+    coldMessages:
+    - 
+    - 
+    - 
+    - has evaporate it
+    - has evaporate it
+    normalMessages:
+    - 
+    - 
+    - 
+    - has evaporate it
+    - has evaporate it
+    hotMessages:
+    - has burned
+    - has burned
+    - 
+    - has evaporate it
+    - has evaporate it
+    hellMessages:
+    - has burned
+    - has burned
+    - has lost it's fur
+    - has evaporate it
+    - has evaporate it
+    allowedModifiers: 03000000
+  - name: Ice Cream
+    description: Creamy as always, it feels like it's summer!
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - 
+    - 
+    - has evaporate it
+    - has evaporate it
+    coldMessages:
+    - 
+    - melts
+    - 
+    - has evaporate it
+    - has evaporate it
+    normalMessages:
+    - melts
+    - melts
+    - melts
+    - has evaporate it
+    - has evaporate it
+    hotMessages:
+    - melts
+    - melts
+    - melts
+    - has evaporate it
+    - has evaporate it
+    hellMessages:
+    - melts
+    - melts
+    - melts
+    - has disintegrated
+    - has evaporate it
+    allowedModifiers: 
+  - name: Cactus
+    description: This reminds me too much to the desert I hate the sand
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - 
+    - has frozen
+    - 
+    - 
+    coldMessages:
+    - 
+    - 
+    - 
+    - 
+    - 
+    normalMessages:
+    - 
+    - 
+    - 
+    - 
+    - 
+    hotMessages:
+    - 
+    - has been cooked
+    - 
+    - has disintegrated
+    - 
+    hellMessages:
+    - has burned
+    - has burned
+    - has burned
+    - has disintegrated
+    - has burned
+    allowedModifiers: 01000000
+  modifiers: 
+  targetScore: 4
+  shownClothes: 2

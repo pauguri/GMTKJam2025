@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d72987ece7431249b22d7235a97f9ac, type: 3}
+  m_Name: Phase4
+  m_EditorClassIdentifier: 
+  materials:
+  - name: Superhero Latex
+    description: My favorite one is Superman!
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - 
+    - has frozen
+    - has disintegrated
+    - 
+    coldMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    normalMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - 
+    hotMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - has burned
+    hellMessages:
+    - has burned
+    - has burned
+    - has burned
+    - has burned
+    - has burned
+    allowedModifiers: 
+  - name: Labubu Fur
+    description: those little creatures look cute, I wish it's only a passanger fashion.
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - has disintegrated
+    - 
+    - smells bad
+    - 
+    - smells bad
+    coldMessages:
+    - has disintegrated
+    - 
+    - 
+    - 
+    - smells bad
+    normalMessages:
+    - has disintegrated
+    - 
+    - 
+    - 
+    - 
+    hotMessages:
+    - has disintegrated
+    - 
+    - Smells Bad
+    - 
+    - 
+    hellMessages:
+    - has disintegrated
+    - 
+    - Smells Bad
+    - 
+    - 
+    allowedModifiers: 02000000
+  - name: Uranium Essence
+    description: Radioactive!
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - Slips
+    - 
+    - 
+    - 
+    coldMessages:
+    - 
+    - Slips
+    - 
+    - 
+    - 
+    normalMessages:
+    - 
+    - 
+    - 
+    - fisionates
+    - fisionates
+    hotMessages:
+    - fisionates
+    - fisionates
+    - 
+    - fisionates
+    - fisionates
+    hellMessages:
+    - fisionates
+    - fisionates
+    - fisionates
+    - fisionates
+    - fisionates
+    allowedModifiers: 04000000
+  - name: Kryptonite
+    description: I hope this never hits my favorite super hero.
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - Slips
+    - 
+    - 
+    - 
+    coldMessages:
+    - 
+    - Slips
+    - 
+    - 
+    - 
+    normalMessages:
+    - 
+    - 
+    - 
+    - fisionates
+    - fisionates
+    hotMessages:
+    - fisionates
+    - fisionates
+    - 
+    - fisionates
+    - fisionates
+    hellMessages:
+    - fisionates
+    - fisionates
+    - fisionates
+    - fisionates
+    - fisionates
+    allowedModifiers: 04000000
+  - name: Alien Leather
+    description: I don't understand why they call them the greys? If they are green
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - smells bad
+    - 
+    - 
+    - 
+    - 
+    coldMessages:
+    - 
+    - smells bad
+    - 
+    - 
+    - 
+    normalMessages:
+    - 
+    - smells bad
+    - 
+    - 
+    - has burned
+    hotMessages:
+    - 
+    - fries
+    - 
+    - 
+    - has burned
+    hellMessages:
+    - smells bad
+    - fries
+    - smells bad
+    - 
+    - has burned
+    allowedModifiers: 01000000
+  modifiers: 
+  targetScore: 4
+  shownClothes: 2

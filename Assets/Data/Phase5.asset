@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d72987ece7431249b22d7235a97f9ac, type: 3}
+  m_Name: Phase5
+  m_EditorClassIdentifier: 
+  materials:
+  - name: Dragon Scales
+    description: I would really Like to train One.
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - smells bad
+    - has frozen
+    - has frozen
+    - has frozen
+    - smells bad
+    coldMessages:
+    - smells bad
+    - has frozen
+    - has frozen
+    - 
+    - 
+    normalMessages:
+    - smells bad
+    - 
+    - has frozen
+    - 
+    - 
+    hotMessages:
+    - 
+    - 
+    - 
+    - 
+    - 
+    hellMessages:
+    - 
+    - 
+    - 
+    - 
+    - 
+    allowedModifiers: 01000000
+  - name: Fenix feathers
+    description: If this cloth burns it will reborn?
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - 
+    - has frozen
+    - 
+    - 
+    coldMessages:
+    - 
+    - 
+    - has frozen
+    - 
+    - 
+    normalMessages:
+    - 
+    - 
+    - has frozen
+    - has disintegrated
+    - 
+    hotMessages:
+    - has disintegrated
+    - has disintegrated
+    - has frozen
+    - has evaporate it
+    - 
+    hellMessages:
+    - has disintegrated
+    - has disintegrated
+    - has frozen
+    - has evaporate it
+    - 
+    allowedModifiers: 01000000
+  - name: Demon Leather
+    description: Directly from Hell! Oh Yeah!
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - has disintegrated
+    - 
+    - has frozen
+    - 
+    - smells bad
+    coldMessages:
+    - has disintegrated
+    - 
+    - has frozen
+    - has evaporate it
+    - smells bad
+    normalMessages:
+    - has disintegrated
+    - boils
+    - has frozen
+    - has evaporate it
+    - 
+    hotMessages:
+    - has disintegrated
+    - boils
+    - has frozen
+    - has evaporate it
+    - 
+    hellMessages:
+    - has disintegrated
+    - 
+    - 
+    - fisionates
+    - 
+    allowedModifiers: 01000000
+  - name: Mermaid Hear
+    description: Love this redhair colour it could belong to a princess.
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - 
+    - 
+    - 
+    - has shrunk
+    coldMessages:
+    - 
+    - 
+    - 
+    - has evaporate it
+    - has shrunk
+    normalMessages:
+    - 
+    - 
+    - 
+    - has evaporate it
+    - 
+    hotMessages:
+    - 
+    - 
+    - has burned
+    - has evaporate it
+    - 
+    hellMessages:
+    - 
+    - fries
+    - has burned
+    - 
+    - 
+    allowedModifiers: 04000000
+  - name: Wood
+    description: There's no better smell than this wet
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    freezingMessages:
+    - 
+    - 
+    - 
+    - 
+    - 
+    coldMessages:
+    - 
+    - 
+    - 
+    - 
+    - has burned
+    normalMessages:
+    - 
+    - 
+    - 
+    - has disintegrated
+    - has burned
+    hotMessages:
+    - has burned
+    - has burned
+    - 
+    - has disintegrated
+    - has burned
+    hellMessages:
+    - has burned
+    - has burned
+    - has burned
+    - has disintegrated
+    - has burned
+    allowedModifiers: 01000000
+  modifiers: 
+  targetScore: 4
+  shownClothes: 2
