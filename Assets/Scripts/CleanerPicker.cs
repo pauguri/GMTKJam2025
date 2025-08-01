@@ -18,7 +18,8 @@ public class CleanerPicker : MonoBehaviour
             if (selectedBottles.Count > 0)
             {
                 // Deselect all previously selected bottles
-                foreach (var selectedBottle in selectedBottles)
+                var bottlesToRemove = selectedBottles.ToList();
+                foreach (var selectedBottle in bottlesToRemove)
                 {
                     selectedBottle.SetSelected(false);
                 }
