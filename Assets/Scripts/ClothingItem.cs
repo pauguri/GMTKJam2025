@@ -9,15 +9,23 @@ public class ClothingItem : MonoBehaviour
     [SerializeField] private TagPlaceholders tagPlaceholders;
     [SerializeField] private Modifiers modifiersData;
     [SerializeField] private MeshRenderer meshRenderer;
+    [Space]
+    [SerializeField] private Canvas smallLabelCanvas;
     [SerializeField] private TextMeshProUGUI brandText;
     [SerializeField] private Image materialIcon;
     [SerializeField] private Image extraImage1;
     [SerializeField] private Image extraImage2;
+    [Space]
     [SerializeField] private int meshMaterialIndex = 0;
     [HideInInspector] public ModifierType modifier;
     [HideInInspector] public GameMaterial gameMaterial;
     public ClothesManager clothesManager;
     [SerializeField] private Outline outline;
+
+    [Space]
+    [SerializeField] private Canvas largeLabelCanvas;
+    [SerializeField] private Image largeMaterialIcon;
+    [SerializeField] private TextMeshProUGUI errorText;
 
     [HideInInspector] public string errorMessage;
     //private Animator animator;
@@ -38,6 +46,8 @@ public class ClothingItem : MonoBehaviour
         this.gameMaterial = gameMaterial;
         meshRenderer.material = gameMaterial.materials[meshMaterialIndex];
         materialIcon.sprite = gameMaterial.icon;
+        largeMaterialIcon.sprite = gameMaterial.icon;
+        largeLabelCanvas.gameObject.SetActive(false);
 
         if (modifierType == ModifierType.None)
         {
@@ -127,6 +137,32 @@ public class ClothingItem : MonoBehaviour
 
     public void Show()
     {
+        if (clothesManager == null || clothesManager.clothesState == ClothesState.CanBeSelected)
+        {
+            meshRenderer.enabled = true;
+            smallLabelCanvas.gameObject.SetActive(true);
+
+            largeLabelCanvas.gameObject.SetActive(false);
+        }
+        else
+        {
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                meshRenderer.enabled = true;
+                smallLabelCanvas.gameObject.SetActive(true);
+                // TODO: sparkles particle system
+
+                largeLabelCanvas.gameObject.SetActive(false);
+            }
+            else
+            {
+                errorText.text = errorMessage;
+                largeLabelCanvas.gameObject.SetActive(true);
+
+                meshRenderer.enabled = false;
+                smallLabelCanvas.gameObject.SetActive(false);
+            }
+        }
         transform.DOLocalMoveY(0f, 0.5f).SetEase(Ease.OutExpo);
         transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutExpo);
     }

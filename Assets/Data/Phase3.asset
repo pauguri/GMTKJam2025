@@ -22,13 +22,13 @@ MonoBehaviour:
     - 
     - 
     - has disintegrated
-    - 
+    - has lost it's magic
     coldMessages:
     - 
     - 
     - 
     - has disintegrated
-    - 
+    - has lost it's magic
     normalMessages:
     - 
     - 
@@ -54,11 +54,11 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 1191c6b6376c10047862a8c3d1b38f55, type: 3}
     materials: []
     freezingMessages:
-    - 
+    - has frozen
     - 
     - 
     - has evaporated
-    - has evaporated
+    - 
     coldMessages:
     - 
     - 
@@ -92,8 +92,8 @@ MonoBehaviour:
     - 
     - 
     - 
-    - has evaporated
-    - has evaporated
+    - 
+    - 
     coldMessages:
     - 
     - 
@@ -125,7 +125,7 @@ MonoBehaviour:
     materials: []
     freezingMessages:
     - 
-    - 
+    - not tasty
     - 
     - has evaporated
     - has evaporated
@@ -159,21 +159,21 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 8951a97e24a744943a0c7c66c7cfb382, type: 3}
     materials: []
     freezingMessages:
-    - 
+    - has dried
     - 
     - has been frozen
     - 
     - 
     coldMessages:
+    - has dried
     - 
-    - 
-    - 
+    - has been frozen
     - 
     - 
     normalMessages:
+    - smells bad
     - 
-    - 
-    - 
+    - it's still dry
     - 
     - 
     hotMessages:

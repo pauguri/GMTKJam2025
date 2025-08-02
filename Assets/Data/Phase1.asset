@@ -21,7 +21,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: bb3d266dfde80914e8f1fb8036504219, type: 2}
     - {fileID: 2100000, guid: 589daab1394f66841875b4ad2602b46c, type: 2}
     freezingMessages:
-    - 
+    - has frozen
     - 
     - has been frozen
     - has disintegrated
@@ -105,16 +105,16 @@ MonoBehaviour:
     - 
     - 
     - has disintegrated
-    - 
+    - has melted
     normalMessages:
     - 
-    - 
+    - has melted
     - 
     - has disintegrated
     - has shrunk
     hotMessages:
-    - 
-    - 
+    - has melted
+    - has melted
     - 
     - has disintegrated
     - has shrunk
@@ -144,19 +144,19 @@ MonoBehaviour:
     - has disintegrated
     - has been magically destroyed
     normalMessages:
-    - 
+    - It's Magic disappeared
     - 
     - 
     - has disintegrated
     - 
     hotMessages:
-    - 
+    - It's Magic disappeared
     - has burned to ashes
     - 
     - has disintegrated
     - has been magically destroyed
     hellMessages:
-    - 
+    - It's Magic disappeared
     - has burned to ashes
     - has burned to ashes
     - has disintegrated

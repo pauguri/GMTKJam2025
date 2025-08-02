@@ -18,25 +18,25 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: f80eadd7985c7a640a734b101cf80123, type: 3}
     materials: []
     freezingMessages:
-    - 
+    - it has changed of colour
     - 
     - has been frozen
     - has disintegrated
     - 
     coldMessages:
-    - 
+    - it has changed of colour
     - 
     - 
     - has disintegrated
     - 
     normalMessages:
-    - 
+    - it has changed of colour
     - 
     - 
     - has disintegrated
     - 
     hotMessages:
-    - 
+    - it has changed of colour
     - 
     - 
     - has disintegrated
@@ -124,19 +124,19 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: e8135c85a90f9cf49a5488dfa5dc26d0, type: 3}
     materials: []
     freezingMessages:
-    - 
+    - has spontaneously combusted
     - is too slippery
     - 
     - 
     - 
     coldMessages:
-    - 
+    - has spontaneously combusted
     - is too slippery
     - 
     - 
     - 
     normalMessages:
-    - 
+    - has spontaneously combusted
     - 
     - 
     - has spontaneously combusted
@@ -165,7 +165,7 @@ MonoBehaviour:
     - 
     - 
     coldMessages:
-    - 
+    - still smells bad
     - still smells bad
     - 
     - 
