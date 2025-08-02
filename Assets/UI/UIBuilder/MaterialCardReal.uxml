@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="Combination-MaterialCard" src="project://database/Assets/UI/UIBuilder/Combination-MaterialCard.uxml?fileID=9197481963319205126&amp;guid=6e40a63192d996a4e8f2455db59eebc6&amp;type=3#Combination-MaterialCard" />
+    <ui:VisualElement name="MaterialCard" style="flex-grow: 1; width: 100%; height: auto; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; margin-right: 0; padding-right: 20px; background-color: rgba(178, 178, 178, 0.5); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
+        <ui:VisualElement name="Header" style="flex-grow: 0; flex-direction: row; height: initial; width: 100%; align-items: center;">
+            <ui:VisualElement name="MaterialIcon" style="width: 45px; height: 50px; margin-right: 10px; background-image: url(&quot;project://database/Assets/UI/Material%20Icons/Whool.png?fileID=2800000&amp;guid=a8da5425139fa214d9647943e04beb6a&amp;type=3#Whool&quot;);" />
+            <ui:Label text="Material Name" name="MaterialName" style="-unity-font-definition: url(&quot;project://database/Assets/UI/Fonts/Alike-Regular.ttf?fileID=12800000&amp;guid=bc7964654f7498e4b8ef99fff7f10e2f&amp;type=3#Alike-Regular&quot;); font-size: 36px; color: rgb(71, 71, 71); height: 50px;" />
+        </ui:VisualElement>
+        <ui:Label text="It seems warm and fluffy it could fit everyone, even being a Laundry Machine I would sleep on it" name="Hint" style="-unity-font-definition: url(&quot;project://database/Assets/UI/Fonts/Alike-Regular.ttf?fileID=12800000&amp;guid=bc7964654f7498e4b8ef99fff7f10e2f&amp;type=3#Alike-Regular&quot;); font-size: 20px; color: rgb(71, 71, 71); height: initial; white-space: normal;" />
+        <ui:VisualElement name="CombinationsArray" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap;">
+            <ui:Instance template="Combination-MaterialCard" name="Combination-MaterialCard" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
