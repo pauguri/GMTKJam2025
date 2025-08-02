@@ -51,7 +51,7 @@ public class ClothesManager : MonoBehaviour
     {
         foreach (ClothingItem item in clothes)
         {
-            Destroy(item.gameObject);
+            item.Discard();
         }
         clothes.Clear();
         selectedClothes.Clear();

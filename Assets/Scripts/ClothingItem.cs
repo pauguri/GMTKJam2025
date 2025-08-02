@@ -59,7 +59,8 @@ public class ClothingItem : MonoBehaviour
 
     void Update()
     {
-        if (PlayerInputHook.Instance.raycastHit.transform == transform)
+        if (clothesManager == null) return;
+        if (clothesManager.clothesState == ClothesState.CanBeSelected && PlayerInputHook.Instance.raycastHit.transform == transform)
         {
             if (!isHovered)
             {
@@ -85,7 +86,8 @@ public class ClothingItem : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext context)
     {
-        if (isHovered && context.canceled)
+        if (clothesManager == null) return;
+        if (clothesManager.clothesState == ClothesState.CanBeSelected && isHovered && context.canceled)
         {
             SetSelected(!isSelected);
         }
@@ -97,13 +99,13 @@ public class ClothingItem : MonoBehaviour
         isSelected = value;
         if (isSelected)
         {
-            //animator.SetBool("selected", true);
+            transform.DOScale(Vector3.one * 1.1f, 0.15f).SetEase(Ease.OutBack);
             DOTween.To(() => outline.OutlineColor.a, x => outline.OutlineColor = new Color(1, 1, 1, x), 1f, 0.15f);
             clothesManager.HandleSelectItem(this);
         }
         else
         {
-            //animator.SetBool("selected", false);
+            transform.DOScale(Vector3.one, 0.15f).SetEase(Ease.OutBack);
             if (isHovered)
             {
                 DOTween.To(() => outline.OutlineColor.a, x => outline.OutlineColor = new Color(1, 1, 1, x), 0.2f, 0.15f);
@@ -114,6 +116,26 @@ public class ClothingItem : MonoBehaviour
             }
             clothesManager.HandleDeselectItem(this);
         }
+    }
+
+    public void Hide()
+    {
+        transform.DOLocalMoveY(-10f, 0.5f).SetEase(Ease.InExpo);
+        transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InExpo);
+    }
+
+    public void Show()
+    {
+        transform.DOLocalMoveY(0f, 0.5f).SetEase(Ease.OutExpo);
+        transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutExpo);
+    }
+
+    public void Discard()
+    {
+        var sequence = DOTween.Sequence();
+        sequence.Insert(0f, transform.DOMove(new Vector3(0, 0, 50f), 0.8f).SetEase(Ease.InExpo));
+        sequence.Insert(0f, transform.DOScale(Vector3.zero, 0.8f).SetEase(Ease.InExpo).OnComplete(() => Destroy(gameObject)));
+        sequence.AppendCallback(() => Destroy(gameObject));
     }
 
     private void OnDestroy()
