@@ -16,7 +16,9 @@ MonoBehaviour:
   - name: Bacon
     description: Do you smell it? I'd love to have it in a burger right now
     icon: {fileID: 21300000, guid: e27d1717c6f79b6488f4f1141ccda062, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: 8ab965a5696f14d4b99d80bfe9be9f52, type: 2}
+    - {fileID: 2100000, guid: 9ccc579b30b396b41b478ca7aea51f96, type: 2}
     freezingMessages:
     - 
     - 
@@ -52,7 +54,9 @@ MonoBehaviour:
     description: delicioooous I could each a bunch of them, I love looking for them
       under the rocks in the sea
     icon: {fileID: 21300000, guid: cb39a82c9e6b5f44d884e8e3ebb19a55, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: 73a09ced6d3ff5e45ab5ae769beaa36f, type: 2}
+    - {fileID: 2100000, guid: be9832199f2b689489855b48958690ac, type: 2}
     freezingMessages:
     - 
     - 
@@ -87,7 +91,9 @@ MonoBehaviour:
   - name: Butter
     description: I love this one, it makes my gears spin perfectly
     icon: {fileID: 21300000, guid: 8001bf52ff1318f42afc2781da94d5c6, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: cbbfa08fdba3c22408bb38fb213a4dc1, type: 2}
+    - {fileID: 2100000, guid: 8b2bbeb76f2345947a304ec8a911ebb8, type: 2}
     freezingMessages:
     - has shrunk
     - has shrunk
@@ -122,7 +128,9 @@ MonoBehaviour:
   - name: Gremlin Fur
     description: Those little annoying creatures invaded my mall
     icon: {fileID: 21300000, guid: 459bf8b2ad1dffb4fa5276fc66c92e05, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: 14d1987ba34aff048afe07deff57829d, type: 2}
+    - {fileID: 2100000, guid: 2837852bbff32d9478c3d8b2a9d470bd, type: 2}
     freezingMessages:
     - still smells bad
     - still smells bad
@@ -157,7 +165,9 @@ MonoBehaviour:
   - name: Crocodrile Leather
     description: 'Direclty from the Nile! How exotic! '
     icon: {fileID: 21300000, guid: 6e0655c1b0cf05f4c96085a1a883b6eb, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: 25835b7f9625bee4e81b218ceca07dfd, type: 2}
+    - {fileID: 2100000, guid: a7a6ff90e8b373742bbcc59c52c56c49, type: 2}
     freezingMessages:
     - still smells bad
     - 

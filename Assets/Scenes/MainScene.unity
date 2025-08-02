@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothingItemPrefabs:
-  - {fileID: 2070519108081688489, guid: 781ac0f4f31eae0419cd3fe7b3586b21, type: 3}
   - {fileID: 3668893638176549111, guid: adbf34dcf1e45ab40912d0d73f5f8c21, type: 3}
+  - {fileID: 2070519108081688489, guid: 781ac0f4f31eae0419cd3fe7b3586b21, type: 3}
   spawnPoints2:
   - {fileID: 623318603}
   - {fileID: 1007290770}
@@ -3306,7 +3306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cc5e1813388b71649b6e2d0a6f8f9103, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8fba8e83984968e4fa064455e68ef441, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

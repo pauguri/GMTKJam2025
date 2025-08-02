@@ -17,7 +17,9 @@ MonoBehaviour:
     description: It seems warm and fluffy it could fit everyone, even being a Laundry
       Machine I would sleep on it
     icon: {fileID: 21300000, guid: a8da5425139fa214d9647943e04beb6a, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: bb3d266dfde80914e8f1fb8036504219, type: 2}
+    - {fileID: 2100000, guid: 589daab1394f66841875b4ad2602b46c, type: 2}
     freezingMessages:
     - 
     - 
@@ -52,7 +54,9 @@ MonoBehaviour:
   - name: Cow Leather
     description: Truly timeless fabric, the most premium brands fight for them
     icon: {fileID: 21300000, guid: 4fb5843b5f402f849b207018be004927, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: 075c5acabe2127248b0316d52f6d85ef, type: 2}
+    - {fileID: 2100000, guid: e9946dfbc3b73aa46afb00f77f28100e, type: 2}
     freezingMessages:
     - has been frozen
     - 
@@ -87,7 +91,9 @@ MonoBehaviour:
   - name: Cardboard
     description: It would make for a nice pizza box
     icon: {fileID: 21300000, guid: e2b5e658f9f217341b67aee149c4b88e, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: 1276025d2bf60d64eba6c1ef2ecadbbf, type: 2}
+    - {fileID: 2100000, guid: dd8164edcfe8fcb46ab675669f155ace, type: 2}
     freezingMessages:
     - 
     - 
@@ -122,7 +128,9 @@ MonoBehaviour:
   - name: Unicorn Fur
     description: Luckily it doesn't come with the horn, it could've torn my wires
     icon: {fileID: 21300000, guid: 2493413a2fc01b343866555cdf2498b2, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: d14736cb9a2be2e4b8e22fef3c7ff5da, type: 2}
+    - {fileID: 2100000, guid: c4f8dde64ad0da24db15dd65413ee326, type: 2}
     freezingMessages:
     - 
     - has been frozen
@@ -157,7 +165,9 @@ MonoBehaviour:
   - name: Dalmata Fur
     description: aaaaand with that one I count 101
     icon: {fileID: 21300000, guid: 5d891f037f17db9489ee95bc12c33281, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials:
+    - {fileID: 2100000, guid: 053b4edd7c349ef4798870dec6ce06b8, type: 2}
+    - {fileID: 2100000, guid: 6a2d8a60940d0bc439695c30d3103edc, type: 2}
     freezingMessages:
     - has been frozen
     - 

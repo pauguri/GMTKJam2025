@@ -8,7 +8,7 @@ public class GameMaterial
     public string name;
     public string description;
     public Sprite icon;
-    public Material material;
+    public Material[] materials;
     public string[] freezingMessages = new string[5];
     public string[] coldMessages = new string[5];
     public string[] normalMessages = new string[5];

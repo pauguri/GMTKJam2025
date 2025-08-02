@@ -13,6 +13,7 @@ public class ClothingItem : MonoBehaviour
     [SerializeField] private Image materialIcon;
     [SerializeField] private Image extraImage1;
     [SerializeField] private Image extraImage2;
+    [SerializeField] private int meshMaterialIndex = 0;
     [HideInInspector] public ModifierType modifier;
     [HideInInspector] public GameMaterial gameMaterial;
     public ClothesManager clothesManager;
@@ -35,7 +36,7 @@ public class ClothingItem : MonoBehaviour
     public void Init(GameMaterial gameMaterial, ModifierType modifierType)
     {
         this.gameMaterial = gameMaterial;
-        meshRenderer.material = gameMaterial.material;
+        meshRenderer.material = gameMaterial.materials[meshMaterialIndex];
         materialIcon.sprite = gameMaterial.icon;
 
         if (modifierType == ModifierType.None)
