@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   temperatures:
   - name: Freezing
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 02d6d155eaa2d074f8b851f02784ad61, type: 3}
   - name: Cold
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 3e7ca6934b8ac0049b629abdfc496395, type: 3}
   - name: Normal
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: fa2b7071f6a25a94fae96ded863a830e, type: 3}
   - name: Hot
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 59ff9e82e7ce3004b93be10ef778de86, type: 3}
   - name: Hell
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 91bdf3b24ac07504da9bc54d7d1e044c, type: 3}

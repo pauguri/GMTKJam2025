@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cleaners:
   - name: Fairy Powder
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: b6f3a1282ca070147b5da3469a241370, type: 3}
     description: 
   - name: bOIL
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 204e895c4afbc0a4dbe1ac959a8dcf77, type: 3}
     description: 
   - name: Haagen-ICE
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 99ee530a8bb56d749a37149f06ae28ea, type: 3}
     description: 
   - name: Acitone
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: c0408391f41d62d4b80502962db670b5, type: 3}
     description: 
   - name: Spice to Meet You
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 79cd81fbac7e2984fa76eba0ab473dfc, type: 3}
     description: 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -24,5 +25,25 @@ public class GameMaterial
             hotMessages,
             hellMessages
         };
+    }
+
+    public Vector2Int[] GetCorrectCombinations()
+    {
+        List<Vector2Int> correctCombinations = new List<Vector2Int>();
+        string[][] matrix = GetMatrix();
+
+        for (int temperature = 0; temperature < matrix.Length; temperature++)
+        {
+            for (int cleaner = 0; cleaner < matrix[temperature].Length; cleaner++)
+            {
+                if (string.IsNullOrEmpty(matrix[temperature][cleaner]))
+                {
+                    Vector2Int combination = new Vector2Int(temperature, cleaner);
+                    correctCombinations.Add(combination);
+                }
+            }
+        }
+
+        return correctCombinations.ToArray();
     }
 }

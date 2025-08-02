@@ -115,10 +115,11 @@ public class GameLogic : MonoBehaviour
         {
             string[][] materialMatrix = item.gameMaterial.GetMatrix();
             string matrixCell = materialMatrix[tempDial.Value][cleanerPicker.Value[0]];
-            if (matrixCell.Length == 0)
+            if (string.IsNullOrEmpty(matrixCell))
             {
                 score++;
-
+                item.errorMessage = "";
+                // manualHandler.AddCombination(item.gameMaterial, tempDial.Value, cleanerPicker.Value[0]);
                 Debug.Log($"Successfully cleaned {item.gameMaterial.name} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
             }
             else
@@ -128,6 +129,7 @@ public class GameLogic : MonoBehaviour
                 //{
                 //    score = 0;
                 //}
+                item.errorMessage = $"The {item.gameMaterial.name} shirt {matrixCell}.";
                 Debug.Log($"The {item.gameMaterial.name} shirt {matrixCell}. Score: {score}");
             }
         }
