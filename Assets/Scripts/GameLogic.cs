@@ -10,6 +10,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private ClothesManager clothesManager;
     [SerializeField] private ControlPanel controlPanel;
     [SerializeField] private ProgressBarManager progressBarManager;
+    [SerializeField] private ManualHandler manualHandler;
     [Space]
     [SerializeField] private LightIndicator clothesIndicator;
     [SerializeField] private LightIndicator cleanerIndicator;
@@ -171,7 +172,7 @@ public class GameLogic : MonoBehaviour
             {
                 score++;
                 item.errorMessage = "";
-                // manualHandler.AddCombination(item.gameMaterial, tempDial.Value, cleanerPicker.Value[0]);
+                manualHandler.AddCombination(item.gameMaterial, tempDial.Value, cleanerPicker.Value[0]);
                 Debug.Log($"Successfully cleaned {item.gameMaterial.name} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
             }
             else
