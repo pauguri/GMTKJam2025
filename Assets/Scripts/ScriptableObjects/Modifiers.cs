@@ -26,6 +26,23 @@ public class Modifier
     public Sprite icon;
     [TextArea] public string description;
     public string triggerMessage;
+    public bool[] freezingTriggers = new bool[5];
+    public bool[] coldTriggers = new bool[5];
+    public bool[] normalTriggers = new bool[5];
+    public bool[] hotTriggers = new bool[5];
+    public bool[] hellTriggers = new bool[5];
+
+    public bool[][] GetMatrix()
+    {
+        return new bool[][]
+        {
+            freezingTriggers,
+            coldTriggers,
+            normalTriggers,
+            hotTriggers,
+            hellTriggers
+        };
+    }
 }
 
 public enum ModifierType
