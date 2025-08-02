@@ -220,6 +220,7 @@ public class GameLogic : MonoBehaviour
 
         progressBarManager.Hide();
         clothesManager.Discard();
+        cleanerPicker.Clear();
         // Also hide unlock animation
 
         DOVirtual.DelayedCall(2f, StartRound);
