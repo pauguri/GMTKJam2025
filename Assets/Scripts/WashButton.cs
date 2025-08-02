@@ -3,21 +3,13 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Outline))]
 public class WashButton : MonoBehaviour
 {
-    private Animator animator;
-    private Outline outline;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Outline outline;
     public Action onClick;
     private bool isEnabled = false;
     private bool isHovered = false;
-
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-        outline = GetComponent<Outline>();
-    }
 
     private void Start()
     {
