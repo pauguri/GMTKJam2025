@@ -7,4 +7,8 @@ public class GamePhase : ScriptableObject
     public ModifierType[] modifiers;
     public int targetScore;
     public int shownClothes = 1;
+    [Space]
+    public Sprite progressBarIcon;
+    public Sprite progressBarGradient;
+    public Sprite progressBarPattern;
 }

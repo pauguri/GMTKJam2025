@@ -16,7 +16,7 @@ MonoBehaviour:
   - name: Mermaid Scales
     description: Was she singing when she was capturated?
     icon: {fileID: 21300000, guid: 263708e9b411aed4bbe268c15d1e14a8, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - 
     - 
@@ -52,7 +52,7 @@ MonoBehaviour:
     description: It would be perfect for a meeting with your boss, they are literally
       born with the style
     icon: {fileID: 21300000, guid: 1191c6b6376c10047862a8c3d1b38f55, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - 
     - 
@@ -87,7 +87,7 @@ MonoBehaviour:
   - name: Polar Bear Fur
     description: I would love to go the the antartica to see one in real life.
     icon: {fileID: 21300000, guid: 65bf9c09a00dac440a6bd91310b03c9d, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - 
     - 
@@ -122,7 +122,7 @@ MonoBehaviour:
   - name: Ice Cream
     description: Creamy as always, it feels like summer!
     icon: {fileID: 21300000, guid: 723f4f2df691a6346ad4fa1ca9015ddc, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - 
     - 
@@ -157,7 +157,7 @@ MonoBehaviour:
   - name: Cactus
     description: This reminds me too much to the desert, I hate the sand
     icon: {fileID: 21300000, guid: 8951a97e24a744943a0c7c66c7cfb382, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - 
     - 
@@ -192,3 +192,6 @@ MonoBehaviour:
   modifiers: 
   targetScore: 4
   shownClothes: 2
+  progressBarIcon: {fileID: 21300000, guid: 4c1262be92a37dd489f6b40a8c9b82e3, type: 3}
+  progressBarGradient: {fileID: 21300000, guid: 54f5bb7b0412fac4ba8ee0d2c28c027e, type: 3}
+  progressBarPattern: {fileID: 21300000, guid: 158607331a459034cb374b1c05af397f, type: 3}

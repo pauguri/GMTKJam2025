@@ -16,7 +16,7 @@ MonoBehaviour:
   - name: Dragon Scales
     description: I would really Like to train One.
     icon: {fileID: 21300000, guid: f36d6b11aaf54a74fb94b88d5b484f37, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - still smells bad
     - has been frozen
@@ -51,7 +51,7 @@ MonoBehaviour:
   - name: Fenix feathers
     description: If this cloth burns, will it reborn?
     icon: {fileID: 21300000, guid: b0333eeb91b42944284144140eab4e56, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - 
     - 
@@ -86,7 +86,7 @@ MonoBehaviour:
   - name: Demon Leather
     description: Directly from Hell! Oh Yeah!
     icon: {fileID: 21300000, guid: 3866aceff67bb1b47974528a144ab03b, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - has disintegrated
     - 
@@ -121,7 +121,7 @@ MonoBehaviour:
   - name: Mermaid Hair
     description: Love this red hair colour, it would fit a princess well.
     icon: {fileID: 21300000, guid: 11a09089566b0a547a99a6b2550ba688, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - 
     - 
@@ -156,7 +156,7 @@ MonoBehaviour:
   - name: Wood
     description: There's no better smell than this one when it's wet
     icon: {fileID: 21300000, guid: 9fd7caa983f84b34b85f9666497df496, type: 3}
-    material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
+    materials: []
     freezingMessages:
     - 
     - 
@@ -191,3 +191,6 @@ MonoBehaviour:
   modifiers: 
   targetScore: 4
   shownClothes: 2
+  progressBarIcon: {fileID: 21300000, guid: bbd0040c59d293442a1660b50d794c4d, type: 3}
+  progressBarGradient: {fileID: 21300000, guid: 7086fc74b18040748b8157bfc6294ab2, type: 3}
+  progressBarPattern: {fileID: 21300000, guid: 43afc469316feae4f94a52fe78c588ce, type: 3}

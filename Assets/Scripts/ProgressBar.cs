@@ -1,21 +1,16 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
-[RequireComponent(typeof(Image))]
 public class ProgressBar : MonoBehaviour
 {
-    private Image image;
+    [SerializeField] private RectTransform bar;
+    [SerializeField] private RectTransform barTrack;
     private Tween tween = null;
-
-    void Awake()
-    {
-        image = GetComponent<Image>();
-    }
 
     public void AnimateTo(float percent)
     {
-        tween = image.DOFillAmount(percent, 0.5f).SetEase(Ease.InOutSine);
+        //tween = bar.DOFillAmount(percent, 0.5f).SetEase(Ease.InOutSine);
+        tween = bar.DOSizeDelta(new Vector2(barTrack.rect.width * percent, barTrack.rect.height), 0.5f).SetEase(Ease.InOutSine);
     }
 
     public void SetPercent(float percent)
@@ -24,6 +19,6 @@ public class ProgressBar : MonoBehaviour
         {
             tween.Kill();
         }
-        image.fillAmount = percent;
+        bar.sizeDelta = new Vector2(barTrack.rect.width * percent, barTrack.rect.height);
     }
 }
