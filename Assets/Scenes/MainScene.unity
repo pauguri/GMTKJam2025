@@ -821,6 +821,7 @@ MonoBehaviour:
   cleanerPicker: {fileID: 695452652}
   tempDial: {fileID: 1616354795}
   clothesManager: {fileID: 12366287}
+  controlPanel: {fileID: 1469259188}
   progressBarManager: {fileID: 2048470878}
   clothesIndicator: {fileID: 3441245912991610743}
   cleanerIndicator: {fileID: 918933488}
@@ -3906,6 +3907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469259187}
+  - component: {fileID: 1469259188}
   m_Layer: 0
   m_Name: ControlPanel
   m_TagString: Untagged
@@ -3921,7 +3923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469259186}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3935,6 +3937,50 @@ Transform:
   - {fileID: 400995137}
   - {fileID: 261583820}
   - {fileID: 337523823}
+  m_Father: {fileID: 1530638383}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469259188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469259186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1330da460b17647b250cd86c10afd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1530638382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1530638383}
+  m_Layer: 0
+  m_Name: ControlPanelContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1530638383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530638382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1469259187}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1545168930
@@ -5188,5 +5234,5 @@ SceneRoots:
   - {fileID: 337319530}
   - {fileID: 609987919}
   - {fileID: 12366286}
-  - {fileID: 1469259187}
+  - {fileID: 1530638383}
   - {fileID: 1023303633842288784}

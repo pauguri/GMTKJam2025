@@ -58,7 +58,7 @@ public class CleanerPicker : MonoBehaviour
 
     public void Hide()
     {
-        cleanersContainer.DOMoveY(-2.5f, 0.5f).SetEase(Ease.InExpo);
+        cleanersContainer.DOMoveY(-3f, 0.5f).SetEase(Ease.InExpo);
         canInteract = false;
     }
 

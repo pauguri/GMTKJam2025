@@ -8,6 +8,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private CleanerPicker cleanerPicker;
     [SerializeField] private TemperatureDial tempDial;
     [SerializeField] private ClothesManager clothesManager;
+    [SerializeField] private ControlPanel controlPanel;
     [SerializeField] private ProgressBarManager progressBarManager;
     [Space]
     [SerializeField] private LightIndicator clothesIndicator;
@@ -29,6 +30,7 @@ public class GameLogic : MonoBehaviour
 
     private bool isClothesReady = false;
     private bool isCleanerReady = false;
+    private bool canSubmit = false;
 
     private bool isFirstMaterialPoolCycle = true;
     private bool isFirstWash = true;
@@ -49,6 +51,7 @@ public class GameLogic : MonoBehaviour
     private void StartRound()
     {
         GamePhase phase = phases[currentPhase];
+        controlPanel.Show();
         cleanerPicker.Show();
         progressBarManager.ShowSmall();
         clothesManager.clothesState = ClothesState.CanBeSelected;
@@ -123,6 +126,7 @@ public class GameLogic : MonoBehaviour
         {
             Debug.Log("Wash button enabled.");
             washButton.SetEnabled(true);
+            canSubmit = true;
         }
         else
         {
@@ -139,11 +143,18 @@ public class GameLogic : MonoBehaviour
             return;
         }
 
+        if (!canSubmit)
+        {
+            Debug.Log("Cannot submit wash, conditions not met.");
+            return;
+        }
+        canSubmit = false; // Prevent multiple submissions
         if (isFirstWash) { isFirstWash = false; }
 
         cleanerPicker.Hide();
         progressBarManager.Hide();
         clothesManager.Hide();
+        controlPanel.Hide();
 
         washingMachine.SetTrigger("Run");
         DOVirtual.DelayedCall(3f, ShowResults);
