@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e213c369a860e438237871741d17ce, type: 3}
   m_Name: Modifiers
   m_EditorClassIdentifier: 
-  modifiers: []
+  modifiers:
+  - type: 1
+    icon: {fileID: 0}
+    description: 
+    triggerMessage: 
+  - type: 2
+    icon: {fileID: 0}
+    description: 
+    triggerMessage: 
+  - type: 3
+    icon: {fileID: 0}
+    description: 
+    triggerMessage: 
+  - type: 4
+    icon: {fileID: 0}
+    description: 
+    triggerMessage: 

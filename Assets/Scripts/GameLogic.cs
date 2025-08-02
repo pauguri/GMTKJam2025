@@ -18,7 +18,8 @@ public class GameLogic : MonoBehaviour
     [HideInInspector] public int score = 0;
     private List<GameMaterial> materialPool = new List<GameMaterial>();
 
-    private bool isFirstCycle = true;
+    private bool isFirstMaterialPoolCycle = true;
+    private bool isFirstWash = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,7 +39,6 @@ public class GameLogic : MonoBehaviour
         Debug.Log($"Starting phase {currentPhase + 1} with target score: {phases[currentPhase].targetScore}");
         progressBar.AnimateTo(0f);
         cleanerPicker.UnlockBottle(currentPhase);
-        clothesManager.shownClothes = phases[currentPhase].shownClothes;
 
         GenerateClothes();
     }
@@ -49,7 +49,9 @@ public class GameLogic : MonoBehaviour
         cleanerPicker.Clear();
         clothesManager.clothesState = ClothesState.CanBeSelected;
 
-        int amountToGenerate = phase.shownClothes;
+        int amountToGenerate = isFirstWash ? 1 : phase.shownClothes;
+        clothesManager.shownClothes = amountToGenerate;
+
         if (clothesManager.Clothes.Length > 0)
         {
             var recycledClothes = clothesManager.Clothes.Except(clothesManager.SelectedClothes).ToArray();
@@ -72,9 +74,9 @@ public class GameLogic : MonoBehaviour
                 materialPool = new List<GameMaterial>(phase.materials);
 
                 // Don't shuffle on the first cycle, it acts as a tutorial
-                if (currentPhase == 0 && isFirstCycle)
+                if (currentPhase == 0 && isFirstMaterialPoolCycle)
                 {
-                    isFirstCycle = false;
+                    isFirstMaterialPoolCycle = false;
                     materialPool.Reverse();
                 }
                 else
@@ -104,6 +106,8 @@ public class GameLogic : MonoBehaviour
             Debug.Log("Please select at least one clothing item, one cleaner and a temperature.");
             return;
         }
+
+        if (isFirstWash) { isFirstWash = false; }
 
         clothesManager.clothesState = ClothesState.ShowsResult;
         int correctClothes = 0;

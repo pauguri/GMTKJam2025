@@ -15,7 +15,7 @@ MonoBehaviour:
   materials:
   - name: Bacon
     description: Do you smell it? I'd love to have it in a burger right now
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: e27d1717c6f79b6488f4f1141ccda062, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
@@ -51,7 +51,7 @@ MonoBehaviour:
   - name: Crab
     description: delicioooous I could each a bunch of them, I love looking for them
       under the rocks in the sea
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: cb39a82c9e6b5f44d884e8e3ebb19a55, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
@@ -86,7 +86,7 @@ MonoBehaviour:
     allowedModifiers: 
   - name: Butter
     description: I love this one, it makes my gears spin perfectly
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 8001bf52ff1318f42afc2781da94d5c6, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - has shrunk
@@ -121,7 +121,7 @@ MonoBehaviour:
     allowedModifiers: 
   - name: Gremlin Fur
     description: Those little annoying creatures invaded my mall
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 459bf8b2ad1dffb4fa5276fc66c92e05, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - still smells bad
@@ -156,7 +156,7 @@ MonoBehaviour:
     allowedModifiers: 
   - name: Crocodrile Leather
     description: 'Direclty from the Nile! How exotic! '
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 6e0655c1b0cf05f4c96085a1a883b6eb, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - still smells bad

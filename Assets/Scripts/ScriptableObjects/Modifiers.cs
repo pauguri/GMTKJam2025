@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Modifiers", menuName = "Scriptable Objects/Modifiers")]
@@ -18,10 +19,13 @@ public class Modifiers : ScriptableObject
     }
 }
 
+[Serializable]
 public class Modifier
 {
     public ModifierType type;
     public Sprite icon;
+    [TextArea] public string description;
+    public string triggerMessage;
 }
 
 public enum ModifierType

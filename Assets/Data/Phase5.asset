@@ -15,7 +15,7 @@ MonoBehaviour:
   materials:
   - name: Dragon Scales
     description: I would really Like to train One.
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: f36d6b11aaf54a74fb94b88d5b484f37, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - still smells bad
@@ -50,7 +50,7 @@ MonoBehaviour:
     allowedModifiers: 01000000
   - name: Fenix feathers
     description: If this cloth burns, will it reborn?
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: b0333eeb91b42944284144140eab4e56, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
@@ -85,7 +85,7 @@ MonoBehaviour:
     allowedModifiers: 01000000
   - name: Demon Leather
     description: Directly from Hell! Oh Yeah!
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 3866aceff67bb1b47974528a144ab03b, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - has disintegrated
@@ -120,7 +120,7 @@ MonoBehaviour:
     allowedModifiers: 01000000
   - name: Mermaid Hair
     description: Love this red hair colour, it would fit a princess well.
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 11a09089566b0a547a99a6b2550ba688, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
@@ -155,7 +155,7 @@ MonoBehaviour:
     allowedModifiers: 04000000
   - name: Wood
     description: There's no better smell than this one when it's wet
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 9fd7caa983f84b34b85f9666497df496, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 

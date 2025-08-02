@@ -16,7 +16,7 @@ MonoBehaviour:
   - name: Wool
     description: It seems warm and fluffy it could fit everyone, even being a Laundry
       Machine I would sleep on it
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: a8da5425139fa214d9647943e04beb6a, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
@@ -51,7 +51,7 @@ MonoBehaviour:
     allowedModifiers: 01000000
   - name: Cow Leather
     description: Truly timeless fabric, the most premium brands fight for them
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 4fb5843b5f402f849b207018be004927, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - has been frozen
@@ -86,7 +86,7 @@ MonoBehaviour:
     allowedModifiers: 
   - name: Cardboard
     description: It would make for a nice pizza box
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: e2b5e658f9f217341b67aee149c4b88e, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
@@ -121,7 +121,7 @@ MonoBehaviour:
     allowedModifiers: 01000000
   - name: Unicorn Fur
     description: Luckily it doesn't come with the horn, it could've torn my wires
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 2493413a2fc01b343866555cdf2498b2, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
@@ -156,7 +156,7 @@ MonoBehaviour:
     allowedModifiers: 
   - name: Dalmata Fur
     description: aaaaand with that one I count 101
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 5d891f037f17db9489ee95bc12c33281, type: 3}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - has been frozen
