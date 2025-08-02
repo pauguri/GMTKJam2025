@@ -22,7 +22,7 @@ MonoBehaviour:
   - name: Haagen-ICE
     icon: {fileID: 21300000, guid: 99ee530a8bb56d749a37149f06ae28ea, type: 3}
     description: 
-  - name: Acitone
+  - name: Acitona
     icon: {fileID: 21300000, guid: c0408391f41d62d4b80502962db670b5, type: 3}
     description: 
   - name: Spice to Meet You

@@ -49,6 +49,12 @@ public class ClothingItem : MonoBehaviour
 
         brandText.text = tagPlaceholders.brands[Random.Range(0, tagPlaceholders.brands.Length)];
         extraImage2.sprite = tagPlaceholders.icons2[Random.Range(0, tagPlaceholders.icons2.Length)];
+
+        // Animate in
+        transform.position = new Vector3(0, 0, 50f);
+        transform.localScale = Vector3.zero;
+        transform.DOScale(Vector3.one, 0.8f).SetEase(Ease.OutExpo).SetDelay(clothesManager.Clothes.Length * 0.2f);
+        transform.DOLocalMove(Vector3.zero, 0.8f).SetEase(Ease.OutExpo).SetDelay(clothesManager.Clothes.Length * 0.2f);
     }
 
     void Update()
