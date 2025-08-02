@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cleaner3
       objectReference: {fileID: 0}
+    - target: {fileID: 8209137513717421226, guid: 121da8b83ea846b418028e6323062c75, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 992cdbe2b822e284eb8b8a33efdad0dc, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

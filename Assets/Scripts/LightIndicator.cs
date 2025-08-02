@@ -9,7 +9,7 @@ public class LightIndicator : MonoBehaviour
     private MeshRenderer meshRenderer;
     public bool defaultState = false;
 
-    private void Start()
+    private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         SetState(defaultState);
