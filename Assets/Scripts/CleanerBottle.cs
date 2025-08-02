@@ -28,7 +28,7 @@ public class CleanerBottle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInputHook.Instance.raycastHit.transform == transform)
+        if (cleanerPicker.canInteract && PlayerInputHook.Instance.raycastHit.transform == transform)
         {
             if (!isHovered)
             {
@@ -54,7 +54,7 @@ public class CleanerBottle : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext context)
     {
-        if (isHovered && context.canceled)
+        if (cleanerPicker.canInteract && isHovered && context.canceled)
         {
             SetSelected(!isSelected);
         }

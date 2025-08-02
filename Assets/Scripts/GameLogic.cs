@@ -7,7 +7,12 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private CleanerPicker cleanerPicker;
     [SerializeField] private TemperatureDial tempDial;
     [SerializeField] private ClothesManager clothesManager;
+    [Space]
     [SerializeField] private ProgressBar progressBar;
+    [SerializeField] private LightIndicator clothesIndicator;
+    [SerializeField] private LightIndicator cleanerIndicator;
+    [SerializeField] private WashButton washButton;
+    [Space]
 
     public Cleaners cleanersData;
     public GamePhase[] phases;
@@ -18,12 +23,19 @@ public class GameLogic : MonoBehaviour
     [HideInInspector] public int score = 0;
     private List<GameMaterial> materialPool = new List<GameMaterial>();
 
+    private bool isClothesReady = false;
+    private bool isCleanerReady = false;
+
     private bool isFirstMaterialPoolCycle = true;
     private bool isFirstWash = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        cleanerPicker.onUpdateSelected += UpdateReadyCleaner;
+        clothesManager.onUpdateSelected += UpdateReadyClothes;
+        washButton.onClick += SubmitWash;
+
         progressBar.SetPercent(0f);
         StartPhase();
     }
@@ -99,9 +111,37 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    public void UpdateReadyCleaner(int[] newSelection)
+    {
+        isCleanerReady = newSelection.Length > 0;
+        cleanerIndicator.SetState(isCleanerReady);
+        TryEnableWashButton();
+    }
+
+    public void UpdateReadyClothes(ClothingItem[] newSelection)
+    {
+        isClothesReady = newSelection.Length > 0;
+        clothesIndicator.SetState(isClothesReady);
+        TryEnableWashButton();
+    }
+
+    public void TryEnableWashButton()
+    {
+        if (isCleanerReady && isClothesReady && tempDial.Value >= 0)
+        {
+            Debug.Log("Wash button enabled.");
+            washButton.SetEnabled(true);
+        }
+        else
+        {
+            Debug.Log("Wash button disabled.");
+            washButton.SetEnabled(false);
+        }
+    }
+
     public void SubmitWash()
     {
-        if (cleanerPicker.Value.Length == 0 || tempDial.Value < 0 || clothesManager.SelectedClothes.Length == 0)
+        if (!isCleanerReady || tempDial.Value < 0 || !isClothesReady)
         {
             Debug.Log("Please select at least one clothing item, one cleaner and a temperature.");
             return;
@@ -150,5 +190,21 @@ public class GameLogic : MonoBehaviour
         }
 
         GenerateClothes();
+    }
+
+    private void OnDestroy()
+    {
+        if (cleanerPicker != null)
+        {
+            cleanerPicker.onUpdateSelected -= UpdateReadyCleaner;
+        }
+        if (clothesManager != null)
+        {
+            clothesManager.onUpdateSelected -= UpdateReadyClothes;
+        }
+        if (washButton != null)
+        {
+            washButton.onClick -= SubmitWash;
+        }
     }
 }
