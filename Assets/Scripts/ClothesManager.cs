@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ClothesManager : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class ClothesManager : MonoBehaviour
     private Transform[][] indexedSpawnPoints;
     [HideInInspector] public int shownClothes = 1;
     [HideInInspector] public ClothesState clothesState = ClothesState.CanBeSelected;
+    public Action<ClothingItem[]> onUpdateSelected;
     private List<ClothingItem> clothes = new List<ClothingItem>();
     private List<ClothingItem> selectedClothes = new List<ClothingItem>();
     public ClothingItem[] Clothes => clothes.ToArray();
@@ -39,12 +42,14 @@ public class ClothesManager : MonoBehaviour
     {
         if (selectedClothes.Contains(item)) return;
         selectedClothes.Add(item);
+        onUpdateSelected?.Invoke(SelectedClothes);
     }
 
     public void HandleDeselectItem(ClothingItem item)
     {
         if (!selectedClothes.Contains(item)) return;
         selectedClothes.Remove(item);
+        onUpdateSelected?.Invoke(SelectedClothes);
     }
 
     public void Clear()
@@ -55,6 +60,7 @@ public class ClothesManager : MonoBehaviour
         }
         clothes.Clear();
         selectedClothes.Clear();
+        onUpdateSelected?.Invoke(SelectedClothes);
     }
 }
 
