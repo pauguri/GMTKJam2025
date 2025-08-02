@@ -28,6 +28,7 @@ public class TextButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
+        text.text = buttonText;
         onClick?.Invoke();
     }
 }

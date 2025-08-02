@@ -32,4 +32,10 @@ public class ProgressBarManager : MonoBehaviour
         smallProgressBar.Hide();
         bigProgressBar.Hide();
     }
+
+    public void ChangeSprites(GamePhase phase)
+    {
+        smallProgressBar.ChangeSprites(phase);
+        bigProgressBar.ChangeSprites(phase);
+    }
 }

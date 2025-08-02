@@ -11,4 +11,7 @@ public class GamePhase : ScriptableObject
     public Sprite progressBarIcon;
     public Sprite progressBarGradient;
     public Sprite progressBarPattern;
+    [Space]
+    public Sprite unlockOverlay;
+    public GameObject spinningCleanerPrefab;
 }

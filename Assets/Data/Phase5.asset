@@ -194,3 +194,5 @@ MonoBehaviour:
   progressBarIcon: {fileID: 21300000, guid: bbd0040c59d293442a1660b50d794c4d, type: 3}
   progressBarGradient: {fileID: 21300000, guid: 7086fc74b18040748b8157bfc6294ab2, type: 3}
   progressBarPattern: {fileID: 21300000, guid: 43afc469316feae4f94a52fe78c588ce, type: 3}
+  unlockOverlay: {fileID: 21300000, guid: 9de68d578a7e0674c8e7df5413dae795, type: 3}
+  spinningCleanerPrefab: {fileID: 2254905427571781342, guid: 5d2b340682eb4804a972c51459bdbf90, type: 3}

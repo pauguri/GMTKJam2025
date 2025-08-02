@@ -130,6 +130,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 3866552285638767715}
   barTrack: {fileID: 7616939437309309078}
+  barGradient: {fileID: 3052620494247060782}
+  barPattern: {fileID: 8797461923477700484}
+  barIcon: {fileID: 8395211515572106644}
 --- !u!225 &134391474408979967
 CanvasGroup:
   m_ObjectHideFlags: 0

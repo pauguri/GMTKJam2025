@@ -1,11 +1,15 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class ProgressBar : MonoBehaviour
 {
     [SerializeField] private RectTransform bar;
     [SerializeField] private RectTransform barTrack;
+    public Image barGradient;
+    public Image barPattern;
+    public Image barIcon;
     private CanvasGroup canvasGroup;
     private Tween tween = null;
 
@@ -36,5 +40,13 @@ public class ProgressBar : MonoBehaviour
     public void Hide()
     {
         canvasGroup.DOFade(0f, 0.5f);
+    }
+
+    public void ChangeSprites(GamePhase phase)
+    {
+        Debug.Log("changing sprite to phase: " + phase.name);
+        barGradient.sprite = phase.progressBarGradient;
+        barPattern.sprite = phase.progressBarPattern;
+        barIcon.sprite = phase.progressBarIcon;
     }
 }

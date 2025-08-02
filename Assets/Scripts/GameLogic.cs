@@ -15,6 +15,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private WashButton washButton;
     [SerializeField] private Animator washingMachine;
     [SerializeField] private TextButton continueButton;
+    [SerializeField] private UnlockOverlay unlockOverlay;
     [Space]
 
     public Cleaners cleanersData;
@@ -169,7 +170,7 @@ public class GameLogic : MonoBehaviour
                 //{
                 //    score = 0;
                 //}
-                item.errorMessage = $"The {item.gameMaterial.name} shirt {matrixCell}.";
+                item.errorMessage = $"It {matrixCell}.";
                 Debug.Log($"The {item.gameMaterial.name} shirt {matrixCell}. Score: {score}");
             }
         }
@@ -189,6 +190,7 @@ public class GameLogic : MonoBehaviour
         {
             // Move to the next phase
             Debug.Log($"Congratulations! You've reached the target score of {phases[currentPhase].targetScore} for phase {currentPhase + 1}. Moving to the next phase.");
+            score -= phases[currentPhase].targetScore;
             currentPhase++;
             if (currentPhase >= phases.Length)
             {
@@ -196,22 +198,43 @@ public class GameLogic : MonoBehaviour
                 return; // End the game or reset to the first phase
             }
 
-            score -= phases[currentPhase].targetScore;
-            UnlockCleaner();
+            DOVirtual.DelayedCall(2f, UnlockCleaner);
         }
         else
         {
-            continueButton.gameObject.SetActive(true);
-            continueButton.onClick += EndRound;
+            DOVirtual.DelayedCall(1f, () =>
+            {
+                continueButton.gameObject.SetActive(true);
+                continueButton.onClick += EndRound;
+            });
         }
     }
 
     public void UnlockCleaner()
     {
+        unlockOverlay.Show(phases[currentPhase]);
+        progressBarManager.Hide();
+        clothesManager.Discard();
+        cleanerPicker.Clear();
         cleanerPicker.UnlockBottle(currentPhase);
-        // Show unlock animation
-        continueButton.gameObject.SetActive(true);
-        continueButton.onClick += EndRound;
+
+        DOVirtual.DelayedCall(1f, () =>
+        {
+            continueButton.gameObject.SetActive(true);
+            continueButton.onClick += EndPhase;
+        });
+    }
+
+    public void EndPhase()
+    {
+        continueButton.onClick -= EndPhase;
+        continueButton.gameObject.SetActive(false);
+
+        unlockOverlay.Hide();
+        progressBarManager.ChangeSprites(phases[currentPhase]);
+        progressBarManager.SetPercent((float)score / phases[currentPhase].targetScore);
+
+        DOVirtual.DelayedCall(2f, StartRound);
     }
 
     public void EndRound()
@@ -222,7 +245,6 @@ public class GameLogic : MonoBehaviour
         progressBarManager.Hide();
         clothesManager.Discard();
         cleanerPicker.Clear();
-        // Also hide unlock animation
 
         DOVirtual.DelayedCall(2f, StartRound);
     }
