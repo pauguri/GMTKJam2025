@@ -53,19 +53,19 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: b0333eeb91b42944284144140eab4e56, type: 3}
     materials: []
     freezingMessages:
-    - 
-    - 
+    - has lost it's propierties
+    - has lost it's propierties
     - has been frozen
-    - 
-    - 
+    - has lost it's propierties
+    - has lost it's propierties
     coldMessages:
-    - 
-    - 
+    - has lost it's propierties
+    - has lost it's propierties
     - has been frozen
-    - 
-    - 
+    - has lost it's propierties
+    - has lost it's propierties
     normalMessages:
-    - 
+    - has lost it's propierties
     - 
     - has been frozen
     - has disintegrated
