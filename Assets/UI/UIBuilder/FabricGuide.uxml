@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="MaterialCardReal" src="project://database/Assets/UI/UIBuilder/MaterialCardReal.uxml?fileID=9197481963319205126&amp;guid=12f502266ed6ae94997412e7f5517d5c&amp;type=3#MaterialCardReal" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(217, 217, 217, 0.85); padding-left: 40px; padding-top: 40px; padding-bottom: 40px; padding-right: 40px; width: 640px; align-items: flex-start; align-self: flex-end; border-top-left-radius: 20px; border-bottom-left-radius: 20px;">
+        <ui:VisualElement name="Header" style="flex-grow: initial; flex-direction: row; align-items: center; height: 100px; width: 100%;">
+            <ui:Button text="Button" style="background-image: url(&quot;project://database/Assets/UI/UIBuilder/closeButton.png?fileID=2800000&amp;guid=9f7f02ffe0c4223488fe7fe6cf5fc184&amp;type=3#closeButton&quot;); width: 100px; height: 100px; background-color: rgba(188, 188, 188, 0); -unity-font-definition: initial; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <ui:Label text="FABRIC GUIDE" name="Title" style="-unity-font-definition: url(&quot;project://database/Assets/UI/Fonts/Swap%20Souce.otf?fileID=12800000&amp;guid=36ab41101bd60a34591e451a324889a5&amp;type=3#Swap Souce&quot;); font-size: 48px; color: rgb(71, 71, 71);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Space" style="width: 40px; height: 40px;" />
+        <ui:ScrollView style="width: 100%; height: auto;">
+            <ui:Instance template="MaterialCardReal" name="MaterialCardReal" />
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>
