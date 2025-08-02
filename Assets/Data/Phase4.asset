@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Phase4
   m_EditorClassIdentifier: 
   materials:
-  - name: Superhero Latex
+  - name: Superhero Spandex
     description: My favorite one is Superman!
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
     - 
-    - has frozen
+    - has been frozen
     - has disintegrated
     - 
     coldMessages:
@@ -40,46 +40,47 @@ MonoBehaviour:
     - 
     - 
     - has disintegrated
-    - has burned
+    - has burned to ashes
     hellMessages:
-    - has burned
-    - has burned
-    - has burned
-    - has burned
-    - has burned
+    - has burned to ashes
+    - has burned to ashes
+    - has burned to ashes
+    - has burned to ashes
+    - has burned to ashes
     allowedModifiers: 
   - name: Labubu Fur
-    description: those little creatures look cute, I wish it's only a passanger fashion.
+    description: Those little creatures look cute, but I wish they're only a quick
+      trend.
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
-    - has disintegrated
+    - has been magically vanished
     - 
-    - smells bad
+    - still smells bad
     - 
-    - smells bad
+    - still smells bad
     coldMessages:
-    - has disintegrated
+    - has been magically vanished
     - 
     - 
     - 
-    - smells bad
+    - still smells bad
     normalMessages:
-    - has disintegrated
+    - has been magically vanished
     - 
     - 
     - 
     - 
     hotMessages:
-    - has disintegrated
+    - has been magically vanished
     - 
-    - Smells Bad
+    - still smells bad
     - 
     - 
     hellMessages:
-    - has disintegrated
+    - has been magically vanished
     - 
-    - Smells Bad
+    - still smells bad
     - 
     - 
     allowedModifiers: 02000000
@@ -89,13 +90,13 @@ MonoBehaviour:
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
-    - Slips
+    - is too slippery
     - 
     - 
     - 
     coldMessages:
     - 
-    - Slips
+    - is too slippery
     - 
     - 
     - 
@@ -103,20 +104,20 @@ MonoBehaviour:
     - 
     - 
     - 
-    - fisionates
-    - fisionates
+    - fissionates
+    - fissionates
     hotMessages:
-    - fisionates
-    - fisionates
+    - fissionates
+    - fissionates
     - 
-    - fisionates
-    - fisionates
+    - fissionates
+    - fissionates
     hellMessages:
-    - fisionates
-    - fisionates
-    - fisionates
-    - fisionates
-    - fisionates
+    - fissionates
+    - fissionates
+    - fissionates
+    - fissionates
+    - fissionates
     allowedModifiers: 04000000
   - name: Kryptonite
     description: I hope this never hits my favorite super hero.
@@ -124,13 +125,13 @@ MonoBehaviour:
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
-    - Slips
+    - is too slippery
     - 
     - 
     - 
     coldMessages:
     - 
-    - Slips
+    - is too slippery
     - 
     - 
     - 
@@ -138,55 +139,55 @@ MonoBehaviour:
     - 
     - 
     - 
-    - fisionates
-    - fisionates
+    - has spontaneously combusted
+    - has spontaneously combusted
     hotMessages:
-    - fisionates
-    - fisionates
+    - has spontaneously combusted
+    - has spontaneously combusted
     - 
-    - fisionates
-    - fisionates
+    - has spontaneously combusted
+    - has spontaneously combusted
     hellMessages:
-    - fisionates
-    - fisionates
-    - fisionates
-    - fisionates
-    - fisionates
+    - has spontaneously combusted
+    - has spontaneously combusted
+    - has spontaneously combusted
+    - has spontaneously combusted
+    - has spontaneously combusted
     allowedModifiers: 04000000
   - name: Alien Leather
-    description: I don't understand why they call them the greys? If they are green
+    description: I don't understand why they call them the grays? If they are green
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
-    - smells bad
+    - still smells bad
     - 
     - 
     - 
     - 
     coldMessages:
     - 
-    - smells bad
+    - still smells bad
     - 
     - 
     - 
     normalMessages:
     - 
-    - smells bad
+    - still smells bad
     - 
     - 
-    - has burned
+    - has burned to ashes
     hotMessages:
     - 
-    - fries
+    - has been fried
     - 
     - 
-    - has burned
+    - has burned to ashes
     hellMessages:
-    - smells bad
-    - fries
-    - smells bad
+    - still smells bad
+    - has been fried
+    - still smells bad
     - 
-    - has burned
+    - has burned to ashes
     allowedModifiers: 01000000
   modifiers: 
   targetScore: 4

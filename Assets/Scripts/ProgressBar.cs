@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     private Image image;
-    private Tween tween;
+    private Tween tween = null;
 
-    void Start()
+    void Awake()
     {
         image = GetComponent<Image>();
     }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materials:
   - name: Mermaid Scales
-    description: Was she singing when was capturated?
+    description: Was she singing when she was capturated?
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
@@ -37,19 +37,19 @@ MonoBehaviour:
     - 
     hotMessages:
     - 
-    - fries
+    - has been fried
     - 
     - has disintegrated
     - has been cooked
     hellMessages:
     - 
-    - fries
-    - has losen all scales
-    - has evaporate it
+    - has been fried
+    - has lost all scales
+    - has evaporated
     - has been cooked
     allowedModifiers: 
   - name: Penguin Fur
-    description: It would be perfect for a meeting with your boss, they literally
+    description: It would be perfect for a meeting with your boss, they are literally
       born with the style
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
@@ -57,29 +57,29 @@ MonoBehaviour:
     - 
     - 
     - 
-    - has evaporate it
-    - has evaporate it
+    - has evaporated
+    - has evaporated
     coldMessages:
     - 
     - 
     - 
-    - has evaporate it
-    - has evaporate it
+    - has evaporated
+    - has evaporated
     normalMessages:
     - 
     - 
     - 
-    - has evaporate it
-    - has evaporate it
+    - has evaporated
+    - has evaporated
     hotMessages:
-    - has burned
-    - has burned
+    - has burned to ashes
+    - has burned to ashes
     - 
-    - has evaporate it
-    - has evaporate it
+    - has evaporated
+    - has evaporated
     hellMessages:
-    - has burned
-    - has burned
+    - has burned to ashes
+    - has burned to ashes
     - 
     - has disintegrated
     - has disintegrated
@@ -92,8 +92,8 @@ MonoBehaviour:
     - 
     - 
     - 
-    - has evaporate it
-    - has evaporate it
+    - has evaporated
+    - has evaporated
     coldMessages:
     - 
     - 
@@ -104,64 +104,64 @@ MonoBehaviour:
     - 
     - 
     - 
-    - has evaporate it
-    - has evaporate it
+    - has evaporated
+    - has evaporated
     hotMessages:
-    - has burned
-    - has burned
+    - has burned to ashes
+    - has burned to ashes
     - 
-    - has evaporate it
-    - has evaporate it
+    - has evaporated
+    - has evaporated
     hellMessages:
-    - has burned
-    - has burned
-    - has lost it's fur
-    - has evaporate it
-    - has evaporate it
+    - has burned to ashes
+    - has burned to ashes
+    - has lost its fur
+    - has evaporated
+    - has evaporated
     allowedModifiers: 03000000
   - name: Ice Cream
-    description: Creamy as always, it feels like it's summer!
+    description: Creamy as always, it feels like summer!
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
     - 
     - 
-    - has evaporate it
-    - has evaporate it
+    - has evaporated
+    - has evaporated
     coldMessages:
     - 
-    - melts
+    - has melted
     - 
-    - has evaporate it
-    - has evaporate it
+    - has evaporated
+    - has evaporated
     normalMessages:
-    - melts
-    - melts
-    - melts
-    - has evaporate it
-    - has evaporate it
+    - has melted
+    - has melted
+    - has melted
+    - has evaporated
+    - has evaporated
     hotMessages:
-    - melts
-    - melts
-    - melts
-    - has evaporate it
-    - has evaporate it
+    - has melted
+    - has melted
+    - has melted
+    - has evaporated
+    - has evaporated
     hellMessages:
-    - melts
-    - melts
-    - melts
+    - has melted
+    - has melted
+    - has melted
     - has disintegrated
-    - has evaporate it
+    - has evaporated
     allowedModifiers: 
   - name: Cactus
-    description: This reminds me too much to the desert I hate the sand
+    description: This reminds me too much to the desert, I hate the sand
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
     - 
-    - has frozen
+    - has been frozen
     - 
     - 
     coldMessages:
@@ -178,16 +178,16 @@ MonoBehaviour:
     - 
     hotMessages:
     - 
-    - has been cooked
+    - has been fried
     - 
     - has disintegrated
     - 
     hellMessages:
-    - has burned
-    - has burned
-    - has burned
+    - has burned to ashes
+    - has burned to ashes
+    - has burned to ashes
     - has disintegrated
-    - has burned
+    - has burned to ashes
     allowedModifiers: 01000000
   modifiers: 
   targetScore: 4

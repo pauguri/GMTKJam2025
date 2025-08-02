@@ -46,17 +46,17 @@ MonoBehaviour:
     - has burned to ashes
     - has burned to ashes
     - has burned to ashes
-    - has evaporate it
+    - has evaporated
     - has burned to ashes
     allowedModifiers: 01000000
-  - name: Leather Cow
-    description: The most classical piece, the most premium brands fight for them
+  - name: Cow Leather
+    description: Truly timeless fabric, the most premium brands fight for them
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
-    - has frozen
+    - has been frozen
     - 
-    - has frozen
+    - has been frozen
     - 
     - 
     coldMessages:
@@ -79,13 +79,13 @@ MonoBehaviour:
     - 
     hellMessages:
     - has burned to ashes
-    - fries
+    - has been fried
     - has burned to ashes
     - has disintegrated
     - has burned to ashes
     allowedModifiers: 
   - name: Cardboard
-    description: It would be a nice protector for a Pizza
+    description: It would make for a nice pizza box
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
@@ -120,14 +120,13 @@ MonoBehaviour:
     - has burned to ashes
     allowedModifiers: 01000000
   - name: Unicorn Fur
-    description: 'Hint: So lucky that it doesn''t comes with the horn it could have
-      taken my wires'
+    description: Luckily it doesn't come with the horn, it could've torn my wires
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
-    - has frozen
-    - has frozen
+    - has been frozen
+    - has been frozen
     - has disintegrated
     - has been magically destroyed
     coldMessages:
@@ -144,25 +143,25 @@ MonoBehaviour:
     - 
     hotMessages:
     - 
-    - has burned
+    - has burned to ashes
     - 
     - has disintegrated
     - has been magically destroyed
     hellMessages:
     - 
-    - has burned
-    - has burned
+    - has burned to ashes
+    - has burned to ashes
     - has disintegrated
     - has been magically destroyed
     allowedModifiers: 
   - name: Dalmata Fur
-    description: aaaaand with that I count 101
+    description: aaaaand with that one I count 101
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
-    - has frozen
+    - has been frozen
     - 
-    - has frozen
+    - has been frozen
     - has disintegrated
     - 
     coldMessages:
@@ -179,16 +178,16 @@ MonoBehaviour:
     - 
     hotMessages:
     - 
-    - has burned
+    - has burned to ashes
     - 
     - has disintegrated
     - 
     hellMessages:
-    - has burned
-    - fries
-    - has burned
+    - has burned to ashes
+    - has been fried
+    - has burned to ashes
     - has disintegrated
-    - has burned
+    - has burned to ashes
     allowedModifiers: 
   modifiers: 
   targetScore: 4

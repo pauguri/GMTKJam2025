@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materials:
   - name: Bacon
-    description: Do you smell it? I would love to have it in my hamburger right now
+    description: Do you smell it? I'd love to have it in a burger right now
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
@@ -44,8 +44,8 @@ MonoBehaviour:
     hellMessages:
     - 
     - 
-    - Overcocks
-    - has evaporate it
+    - has been overcooked
+    - has evaporated
     - 
     allowedModifiers: 01000000
   - name: Crab
@@ -57,35 +57,35 @@ MonoBehaviour:
     - 
     - 
     - has been frozen
-    - has evaporate it
+    - has evaporated
     - 
     coldMessages:
     - 
     - 
     - 
-    - has evaporate it
+    - has evaporated
     - 
     normalMessages:
     - 
     - 
     - 
-    - has evaporate it
+    - has evaporated
     - 
     hotMessages:
     - 
     - 
     - 
-    - has evaporate it
+    - has evaporated
     - 
     hellMessages:
     - 
     - 
-    - Overcocks
+    - has been overcooked
     - has disintegrated
     - 
     allowedModifiers: 
   - name: Butter
-    description: I love this one it makes my engine work perfectly
+    description: I love this one, it makes my gears spin perfectly
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
@@ -102,67 +102,67 @@ MonoBehaviour:
     - 
     normalMessages:
     - 
-    - melts
+    - has melted
     - 
-    - melts
-    - melts
+    - has melted
+    - has melted
     hotMessages:
-    - melts
-    - melts
-    - melts
-    - melts
-    - melts
+    - has melted
+    - has melted
+    - has melted
+    - has melted
+    - has melted
     hellMessages:
-    - melts
-    - melts
-    - melts
-    - melts
-    - melts
+    - has melted
+    - has melted
+    - has melted
+    - has melted
+    - has melted
     allowedModifiers: 
   - name: Gremlin Fur
-    description: Those little annoying creatures invaded my malll
+    description: Those little annoying creatures invaded my mall
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
-    - Smells Bad
-    - Smells Bad
-    - Smells Bad
+    - still smells bad
+    - still smells bad
+    - still smells bad
     - 
     - 
     coldMessages:
-    - Smells Bad
-    - Smells Bad
-    - Smells Bad
+    - still smells bad
+    - still smells bad
+    - still smells bad
     - 
     - 
     normalMessages:
-    - Smells Bad
+    - still smells bad
     - 
-    - Smells Bad
+    - still smells bad
     - 
     - 
     hotMessages:
     - 
     - 
-    - Smells Bad
+    - still smells bad
     - 
-    - has burned
+    - has burned to ashes
     hellMessages:
     - 
     - 
     - 
     - has disintegrated
-    - has burned
+    - has burned to ashes
     allowedModifiers: 
   - name: Crocodrile Leather
-    description: 'direclty from the Nile! How exotic! '
+    description: 'Direclty from the Nile! How exotic! '
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
-    - Smells Bad
+    - still smells bad
     - 
-    - has frozen
-    - has frozen
+    - has been frozen
+    - has been frozen
     - 
     coldMessages:
     - 
@@ -183,11 +183,11 @@ MonoBehaviour:
     - 
     - 
     hellMessages:
-    - has burned
-    - fries
-    - has burned
+    - has burned to ashes
+    - has been fried
+    - has burned to ashes
     - 
-    - has burned
+    - has burned to ashes
     allowedModifiers: 
   modifiers: 
   targetScore: 4

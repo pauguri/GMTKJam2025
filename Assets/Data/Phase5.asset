@@ -18,21 +18,21 @@ MonoBehaviour:
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
-    - smells bad
-    - has frozen
-    - has frozen
-    - has frozen
-    - smells bad
+    - still smells bad
+    - has been frozen
+    - has been frozen
+    - has been frozen
+    - still smells bad
     coldMessages:
-    - smells bad
-    - has frozen
-    - has frozen
+    - still smells bad
+    - has been frozen
+    - has been frozen
     - 
     - 
     normalMessages:
-    - smells bad
+    - still smells bad
     - 
-    - has frozen
+    - has been frozen
     - 
     - 
     hotMessages:
@@ -49,38 +49,38 @@ MonoBehaviour:
     - 
     allowedModifiers: 01000000
   - name: Fenix feathers
-    description: If this cloth burns it will reborn?
+    description: If this cloth burns, will it reborn?
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
     - 
     - 
-    - has frozen
+    - has been frozen
     - 
     - 
     coldMessages:
     - 
     - 
-    - has frozen
+    - has been frozen
     - 
     - 
     normalMessages:
     - 
     - 
-    - has frozen
+    - has been frozen
     - has disintegrated
     - 
     hotMessages:
     - has disintegrated
     - has disintegrated
-    - has frozen
-    - has evaporate it
+    - has been frozen
+    - has evaporated
     - 
     hellMessages:
     - has disintegrated
     - has disintegrated
-    - has frozen
-    - has evaporate it
+    - has been frozen
+    - has evaporated
     - 
     allowedModifiers: 01000000
   - name: Demon Leather
@@ -90,36 +90,36 @@ MonoBehaviour:
     freezingMessages:
     - has disintegrated
     - 
-    - has frozen
+    - has been frozen
     - 
-    - smells bad
+    - still smells bad
     coldMessages:
     - has disintegrated
     - 
-    - has frozen
-    - has evaporate it
-    - smells bad
+    - has been frozen
+    - has evaporated
+    - still smells bad
     normalMessages:
     - has disintegrated
-    - boils
-    - has frozen
-    - has evaporate it
+    - has been boiled away
+    - has been frozen
+    - has evaporated
     - 
     hotMessages:
     - has disintegrated
-    - boils
-    - has frozen
-    - has evaporate it
+    - has been boiled away
+    - has been frozen
+    - has evaporated
     - 
     hellMessages:
     - has disintegrated
     - 
     - 
-    - fisionates
+    - 
     - 
     allowedModifiers: 01000000
-  - name: Mermaid Hear
-    description: Love this redhair colour it could belong to a princess.
+  - name: Mermaid Hair
+    description: Love this red hair colour, it would fit a princess well.
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
@@ -132,29 +132,29 @@ MonoBehaviour:
     - 
     - 
     - 
-    - has evaporate it
+    - has evaporated
     - has shrunk
     normalMessages:
     - 
     - 
     - 
-    - has evaporate it
+    - has evaporated
     - 
     hotMessages:
     - 
     - 
-    - has burned
-    - has evaporate it
+    - has burned to ashes
+    - has evaporated
     - 
     hellMessages:
     - 
-    - fries
-    - has burned
+    - has been fried
+    - has burned to ashes
     - 
     - 
     allowedModifiers: 04000000
   - name: Wood
-    description: There's no better smell than this wet
+    description: There's no better smell than this one when it's wet
     icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     material: {fileID: 2100000, guid: d1e49a61ca165864e94b628883a41455, type: 2}
     freezingMessages:
@@ -168,25 +168,25 @@ MonoBehaviour:
     - 
     - 
     - 
-    - has burned
+    - has burned to ahses
     normalMessages:
     - 
     - 
     - 
     - has disintegrated
-    - has burned
+    - has burned to ashes
     hotMessages:
-    - has burned
-    - has burned
+    - has burned to ashes
+    - has burned to ashes
     - 
     - has disintegrated
-    - has burned
+    - has burned to ashes
     hellMessages:
-    - has burned
-    - has burned
-    - has burned
+    - has burned to ashes
+    - has burned to ashes
+    - has burned to ashes
     - has disintegrated
-    - has burned
+    - has burned to ashes
     allowedModifiers: 01000000
   modifiers: 
   targetScore: 4
