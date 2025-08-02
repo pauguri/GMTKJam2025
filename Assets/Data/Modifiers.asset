@@ -17,15 +17,26 @@ MonoBehaviour:
     icon: {fileID: 0}
     description: 
     triggerMessage: 
+    freezingTriggers: 0000000001
+    coldTriggers: 0000000001
+    normalTriggers: 0000000001
+    hotTriggers: 0000000001
+    hellTriggers: 0001000001
   - type: 2
     icon: {fileID: 0}
     description: 
     triggerMessage: 
-  - type: 3
-    icon: {fileID: 0}
-    description: 
-    triggerMessage: 
+    freezingTriggers: 0100000000
+    coldTriggers: 0000000000
+    normalTriggers: 0000000100
+    hotTriggers: 0100000100
+    hellTriggers: 0100000100
   - type: 4
     icon: {fileID: 0}
     description: 
     triggerMessage: 
+    freezingTriggers: 0000010000
+    coldTriggers: 0000000000
+    normalTriggers: 0000010000
+    hotTriggers: 0000010000
+    hellTriggers: 0000010000
