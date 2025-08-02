@@ -13,6 +13,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private LightIndicator clothesIndicator;
     [SerializeField] private LightIndicator cleanerIndicator;
     [SerializeField] private WashButton washButton;
+    [SerializeField] private Animator washingMachine;
     [SerializeField] private TextButton continueButton;
     [Space]
 
@@ -143,8 +144,8 @@ public class GameLogic : MonoBehaviour
         progressBarManager.Hide();
         clothesManager.Hide();
 
-        // WASHING ANIMATION GOES HERE
-        DOVirtual.DelayedCall(2f, ShowResults);
+        washingMachine.SetTrigger("Run");
+        DOVirtual.DelayedCall(3f, ShowResults);
     }
 
     private void ShowResults()
