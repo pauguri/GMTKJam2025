@@ -52,12 +52,32 @@ public class ClothesManager : MonoBehaviour
         onUpdateSelected?.Invoke(SelectedClothes);
     }
 
-    public void Clear()
+    public void Hide()
+    {
+        foreach (ClothingItem item in clothes)
+        {
+            item.Hide();
+        }
+    }
+
+    public void Show()
+    {
+        foreach (ClothingItem item in clothes)
+        {
+            item.Show();
+        }
+    }
+
+    public void Discard()
     {
         foreach (ClothingItem item in clothes)
         {
             item.Discard();
         }
+    }
+
+    public void Clear()
+    {
         clothes.Clear();
         selectedClothes.Clear();
         onUpdateSelected?.Invoke(SelectedClothes);

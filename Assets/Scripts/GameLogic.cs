@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,11 +8,12 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private CleanerPicker cleanerPicker;
     [SerializeField] private TemperatureDial tempDial;
     [SerializeField] private ClothesManager clothesManager;
+    [SerializeField] private ProgressBarManager progressBarManager;
     [Space]
-    [SerializeField] private ProgressBar progressBar;
     [SerializeField] private LightIndicator clothesIndicator;
     [SerializeField] private LightIndicator cleanerIndicator;
     [SerializeField] private WashButton washButton;
+    [SerializeField] private TextButton continueButton;
     [Space]
 
     public Cleaners cleanersData;
@@ -36,29 +38,17 @@ public class GameLogic : MonoBehaviour
         clothesManager.onUpdateSelected += UpdateReadyClothes;
         washButton.onClick += SubmitWash;
 
-        progressBar.SetPercent(0f);
-        StartPhase();
+        progressBarManager.SetPercent(0f);
+        progressBarManager.Hide();
+        continueButton.gameObject.SetActive(false);
+        DOVirtual.DelayedCall(2f, StartRound);
     }
 
-    private void StartPhase()
-    {
-        if (currentPhase >= phases.Length)
-        {
-            Debug.Log("Congratulations! You've completed all phases of the game!");
-            return; // End the game or reset to the first phase
-        }
-
-        Debug.Log($"Starting phase {currentPhase + 1} with target score: {phases[currentPhase].targetScore}");
-        progressBar.AnimateTo(0f);
-        cleanerPicker.UnlockBottle(currentPhase);
-
-        GenerateClothes();
-    }
-
-    private void GenerateClothes()
+    private void StartRound()
     {
         GamePhase phase = phases[currentPhase];
-        cleanerPicker.Clear();
+        cleanerPicker.Show();
+        progressBarManager.ShowSmall();
         clothesManager.clothesState = ClothesState.CanBeSelected;
 
         int amountToGenerate = isFirstWash ? 1 : phase.shownClothes;
@@ -149,7 +139,16 @@ public class GameLogic : MonoBehaviour
 
         if (isFirstWash) { isFirstWash = false; }
 
-        clothesManager.clothesState = ClothesState.ShowsResult;
+        cleanerPicker.Hide();
+        progressBarManager.Hide();
+        clothesManager.Hide();
+
+        // WASHING ANIMATION GOES HERE
+        DOVirtual.DelayedCall(2f, ShowResults);
+    }
+
+    private void ShowResults()
+    {
         int correctClothes = 0;
         foreach (ClothingItem item in clothesManager.SelectedClothes)
         {
@@ -176,20 +175,54 @@ public class GameLogic : MonoBehaviour
 
         if (correctClothes > 1)
         {
+            // Combo for washing multiple clothes at once
             score += correctClothes - 1;
         }
 
-        progressBar.AnimateTo(Mathf.Min((float)score / phases[currentPhase].targetScore, 1f));
+        clothesManager.clothesState = ClothesState.ShowsResult;
+        clothesManager.Show();
+        progressBarManager.ShowBig();
+        progressBarManager.AnimateTo(Mathf.Min((float)score / phases[currentPhase].targetScore, 1f));
+
         if (score >= phases[currentPhase].targetScore)
         {
+            // Move to the next phase
             Debug.Log($"Congratulations! You've reached the target score of {phases[currentPhase].targetScore} for phase {currentPhase + 1}. Moving to the next phase.");
-            score = score - phases[currentPhase].targetScore;
             currentPhase++;
-            StartPhase();
-            return;
-        }
+            if (currentPhase >= phases.Length)
+            {
+                Debug.Log("Congratulations! You've completed all phases of the game!");
+                return; // End the game or reset to the first phase
+            }
 
-        GenerateClothes();
+            score -= phases[currentPhase].targetScore;
+            UnlockCleaner();
+        }
+        else
+        {
+            continueButton.gameObject.SetActive(true);
+            continueButton.onClick += EndRound;
+        }
+    }
+
+    public void UnlockCleaner()
+    {
+        cleanerPicker.UnlockBottle(currentPhase);
+        // Show unlock animation
+        continueButton.gameObject.SetActive(true);
+        continueButton.onClick += EndRound;
+    }
+
+    public void EndRound()
+    {
+        continueButton.onClick -= EndRound;
+        continueButton.gameObject.SetActive(false);
+
+        progressBarManager.Hide();
+        clothesManager.Discard();
+        // Also hide unlock animation
+
+        DOVirtual.DelayedCall(2f, StartRound);
     }
 
     private void OnDestroy()
