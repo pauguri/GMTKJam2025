@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = backgroundMusic;
         musicSource.loop = true;
         musicSource.playOnAwake = false;
-        musicSource.volume = 0.05f; // You can expose this in inspector
+        musicSource.volume = 0.15f; // You can expose this in inspector
         musicSource.Play();
     }
 }
