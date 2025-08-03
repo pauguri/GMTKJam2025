@@ -30,6 +30,7 @@ public class GameLogic : MonoBehaviour
     [HideInInspector] public int currentPhase = 0;
     private bool endlessMode = false;
     [HideInInspector] public int score = 0;
+    private List<GameMaterial> currentPhaseMaterialPool = new List<GameMaterial>();
     private List<GameMaterial> materialPool = new List<GameMaterial>();
 
     private bool isClothesReady = false;
@@ -88,28 +89,59 @@ public class GameLogic : MonoBehaviour
 
         for (int i = 0; i < amountToGenerate; i++)
         {
-            if (materialPool == null || materialPool.Count == 0)
+            // choose the material pool
+            bool useCurrentPool = true;
+            if (currentPhase > 0)
             {
-                materialPool = new List<GameMaterial>();
-                for (int p = currentPhase; p >= 0; p--)
+                if (!endlessMode)
                 {
-                    materialPool.AddRange(phases[p].materials);
-                }
-
-                // Don't shuffle on the first cycle, it acts as a tutorial
-                if (currentPhase == 0 && isFirstMaterialPoolCycle)
-                {
-                    isFirstMaterialPoolCycle = false;
-                    materialPool.Reverse();
+                    useCurrentPool = Random.Range(0f, 1f) < 0.6f ? true : false; // 60% chance to use current phase pool
                 }
                 else
                 {
-                    materialPool.Shuffle();
+                    useCurrentPool = false;
                 }
             }
 
-            var currentMaterial = materialPool[^1];
-            materialPool.RemoveAt(materialPool.Count - 1);
+            GameMaterial currentMaterial;
+            if (useCurrentPool)
+            {
+                if (currentPhaseMaterialPool == null || currentPhaseMaterialPool.Count == 0)
+                {
+                    currentPhaseMaterialPool = new List<GameMaterial>(phases[currentPhase].materials);
+
+                    // Don't shuffle on the first cycle, it acts as a tutorial
+                    if (currentPhase == 0 && isFirstMaterialPoolCycle)
+                    {
+                        isFirstMaterialPoolCycle = false;
+                        currentPhaseMaterialPool.Reverse();
+                    }
+                    else
+                    {
+                        currentPhaseMaterialPool.Shuffle();
+                    }
+                }
+
+                currentMaterial = currentPhaseMaterialPool[^1];
+                currentPhaseMaterialPool.RemoveAt(currentPhaseMaterialPool.Count - 1);
+            }
+            else
+            {
+                if (currentPhase > 0 && (materialPool == null || materialPool.Count == 0))
+                {
+                    materialPool = new List<GameMaterial>();
+                    int maxPhase = endlessMode ? currentPhase : currentPhase - 1;
+                    for (int p = maxPhase; p >= 0; p--)
+                    {
+                        materialPool.AddRange(phases[p].materials);
+                    }
+
+                    materialPool.Shuffle();
+                }
+
+                currentMaterial = materialPool[^1];
+                materialPool.RemoveAt(materialPool.Count - 1);
+            }
 
             var availableModifiers = phase.modifiers.Intersect(currentMaterial.allowedModifiers).ToArray();
             ModifierType currentModifier = ModifierType.None;
@@ -275,6 +307,9 @@ public class GameLogic : MonoBehaviour
         unlockOverlay.Hide();
         progressBarManager.ChangeSprites(phases[currentPhase]);
         progressBarManager.SetPercent((float)score / phases[currentPhase].targetScore);
+
+        currentPhaseMaterialPool.Clear();
+        materialPool.Clear();
 
         DOVirtual.DelayedCall(2f, StartRound);
     }
