@@ -12,6 +12,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private ProgressBarManager progressBarManager;
     [SerializeField] private ManualHandler manualHandler;
     [SerializeField] private CinematicsManager cinematicsManager;
+    [SerializeField] private TutorialManager tutorialManager;
     [Space]
     [SerializeField] private LightIndicator clothesIndicator;
     [SerializeField] private LightIndicator cleanerIndicator;
@@ -51,6 +52,7 @@ public class GameLogic : MonoBehaviour
         manualHandler.AddMaterials(phases[currentPhase].materials);
 
         cinematicsManager.ShowStartCinematic(StartRound);
+        tutorialManager.Show();
     }
 
     private void StartRound()
@@ -163,12 +165,17 @@ public class GameLogic : MonoBehaviour
             return;
         }
         canSubmit = false; // Prevent multiple submissions
-        if (isFirstWash) { isFirstWash = false; }
 
         cleanerPicker.Hide();
         progressBarManager.Hide();
         clothesManager.HideSelectedAndDiscardRest();
         controlPanel.Hide();
+
+        if (isFirstWash)
+        {
+            isFirstWash = false;
+            tutorialManager.Hide();
+        }
 
         washingMachine.SetTrigger("Run");
         DOVirtual.DelayedCall(3f, ShowResults);
