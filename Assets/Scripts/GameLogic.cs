@@ -21,11 +21,13 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private TextButton continueButton;
     [SerializeField] private UnlockOverlay unlockOverlay;
     [Space]
+    [SerializeField] private AudioSource successWashAudio;
+    [SerializeField] private AudioSource failureWashAudio;
+    [Space]
 
     public Cleaners cleanersData;
+    public Temperatures temperaturesData;
     public GamePhase[] phases;
-
-    private static string[] temperatures = { "Freezing", "Cold", "Normal", "Hot", "Hell" };
 
     [HideInInspector] public int currentPhase = 0;
     private bool endlessMode = false;
@@ -216,6 +218,7 @@ public class GameLogic : MonoBehaviour
     private void ShowResults()
     {
         int correctClothes = 0;
+        int wrongClothes = 0;
         foreach (ClothingItem item in clothesManager.SelectedClothes)
         {
             string[][] materialMatrix = item.gameMaterial.GetMatrix();
@@ -223,10 +226,11 @@ public class GameLogic : MonoBehaviour
             if (string.IsNullOrEmpty(matrixCell))
             {
                 item.isNewCombination = manualHandler.AddCombination(item.gameMaterial, tempDial.Value, cleanerPicker.Value[0]);
+
                 score += item.isNewCombination ? phases[currentPhase].correctNewComboScore : phases[currentPhase].correctRepeatedComboScore;
                 correctClothes++;
                 item.errorMessage = "";
-                Debug.Log($"Successfully cleaned {item.gameMaterial.name} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
+                // Debug.Log($"Successfully cleaned {item.gameMaterial.name} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
             }
             else
             {
@@ -235,6 +239,7 @@ public class GameLogic : MonoBehaviour
                 {
                     score = 0;
                 }
+                wrongClothes++;
                 item.errorMessage = $"It {matrixCell}.";
                 Debug.Log($"The {item.gameMaterial.name} shirt {matrixCell}. Score: {score}");
             }
@@ -246,8 +251,17 @@ public class GameLogic : MonoBehaviour
             score += phases[correctClothes].extraClothesScore;
         }
 
+        if (wrongClothes == 0)
+        {
+            successWashAudio.Play();
+        }
+        else
+        {
+            failureWashAudio.Play();
+        }
+
         clothesManager.clothesState = ClothesState.ShowsResult;
-        clothesManager.ShowSelected();
+        clothesManager.ShowSelected(temperaturesData.temperatures[tempDial.Value].icon, cleanersData.cleaners[cleanerPicker.Value[0]].icon);
         if (!endlessMode)
         {
             progressBarManager.ShowBig();

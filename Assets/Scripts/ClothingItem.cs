@@ -27,6 +27,10 @@ public class ClothingItem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI errorText;
     [Space]
     [SerializeField] private GameObject dirtySpotCanvas;
+    [Space]
+    [SerializeField] private GameObject comboCanvas;
+    [SerializeField] private Image comboCleaner;
+    [SerializeField] private Image comboTemperature;
 
     [HideInInspector] public string errorMessage;
     [HideInInspector] public bool isNewCombination = false;
@@ -49,7 +53,8 @@ public class ClothingItem : MonoBehaviour
         meshRenderer.material = gameMaterial.materials[meshMaterialIndex];
         materialIcon.sprite = gameMaterial.icon;
         largeMaterialIcon.sprite = gameMaterial.icon;
-        largeLabelCanvas.gameObject.SetActive(false);
+        largeLabelCanvas.SetActive(false);
+        comboCanvas.SetActive(false);
 
         if (modifierType == ModifierType.None)
         {
@@ -137,7 +142,7 @@ public class ClothingItem : MonoBehaviour
         transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InExpo);
     }
 
-    public void Show()
+    public void Show(Sprite temperatureIcon, Sprite cleanerIcon)
     {
         if (clothesManager == null || clothesManager.clothesState == ClothesState.CanBeSelected)
         {
@@ -146,6 +151,7 @@ public class ClothingItem : MonoBehaviour
             dirtySpotCanvas.SetActive(true);
 
             largeLabelCanvas.SetActive(false);
+            comboCanvas.SetActive(false);
         }
         else
         {
@@ -156,6 +162,17 @@ public class ClothingItem : MonoBehaviour
                 // TODO: sparkles particle system
 
                 largeLabelCanvas.SetActive(false);
+
+                if (isNewCombination)
+                {
+                    comboCleaner.sprite = cleanerIcon;
+                    comboTemperature.sprite = temperatureIcon;
+                    comboCanvas.SetActive(true);
+                }
+                else
+                {
+                    comboCanvas.SetActive(false);
+                }
             }
             else
             {
@@ -164,8 +181,10 @@ public class ClothingItem : MonoBehaviour
 
                 meshRenderer.enabled = false;
                 smallLabelCanvas.SetActive(false);
+                comboCanvas.SetActive(false);
             }
 
+            outline.enabled = false;
             dirtySpotCanvas.SetActive(false);
         }
         transform.DOLocalMoveY(0f, 0.5f).SetEase(Ease.OutExpo);

@@ -70,11 +70,11 @@ public class ClothesManager : MonoBehaviour
         }
     }
 
-    public void ShowSelected()
+    public void ShowSelected(Sprite temperatureSprite, Sprite cleanerSprite)
     {
         foreach (ClothingItem item in selectedClothes)
         {
-            item.Show();
+            item.Show(temperatureSprite, cleanerSprite);
         }
     }
 

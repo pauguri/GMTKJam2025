@@ -6,7 +6,6 @@ public class WashingMachine : MonoBehaviour
 {
     private Animator animator;
     [SerializeField] private AudioSource washAudio;
-    [SerializeField] private AudioSource endAudio;
 
     private void Awake()
     {
@@ -21,13 +20,6 @@ public class WashingMachine : MonoBehaviour
             if (washAudio != null)
             {
                 washAudio.Play();
-            }
-        });
-        DOVirtual.DelayedCall(3f, () =>
-        {
-            if (endAudio != null)
-            {
-                endAudio.Play();
             }
         });
     }
