@@ -78,7 +78,7 @@ public class GameLogic : MonoBehaviour
             clothesManager.Clear();
             foreach (ClothingItem item in recycledClothes)
             {
-                clothesManager.CreateClothingItem(item.gameMaterial, item.modifier);
+                clothesManager.CreateClothingItem(item.gameMaterial, item.modifier, item.meshMaterialIndex);
             }
             amountToGenerate -= Mathf.Min(recycledClothes.Length, amountToGenerate);
         }

@@ -27,9 +27,10 @@ public class ClothesManager : MonoBehaviour
         indexedSpawnPoints[3] = spawnPoints4;
     }
 
-    public void CreateClothingItem(GameMaterial gameMaterial, ModifierType modifierType)
+    public void CreateClothingItem(GameMaterial gameMaterial, ModifierType modifierType, int clothingIndex = -1)
     {
-        GameObject itemObject = Instantiate(clothingItemPrefabs[Random.Range(0, clothingItemPrefabs.Length)], indexedSpawnPoints[shownClothes - 1][clothes.Count]);
+        int clothingItemIndex = clothingIndex < 0 ? Random.Range(0, clothingItemPrefabs.Length) : clothingIndex;
+        GameObject itemObject = Instantiate(clothingItemPrefabs[clothingItemIndex], indexedSpawnPoints[shownClothes - 1][clothes.Count]);
         if (itemObject.TryGetComponent<ClothingItem>(out var clothingItem))
         {
             clothingItem.clothesManager = this;

@@ -16,7 +16,7 @@ public class ClothingItem : MonoBehaviour
     [SerializeField] private Image extraImage1;
     [SerializeField] private Image extraImage2;
     [Space]
-    [SerializeField] private int meshMaterialIndex = 0;
+    public int meshMaterialIndex = 0;
     [HideInInspector] public ModifierType modifier;
     [HideInInspector] public GameMaterial gameMaterial;
     public ClothesManager clothesManager;
