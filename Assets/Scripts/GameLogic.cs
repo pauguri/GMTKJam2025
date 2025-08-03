@@ -11,6 +11,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private ControlPanel controlPanel;
     [SerializeField] private ProgressBarManager progressBarManager;
     [SerializeField] private ManualHandler manualHandler;
+    [SerializeField] private CinematicsManager cinematicsManager;
     [Space]
     [SerializeField] private LightIndicator clothesIndicator;
     [SerializeField] private LightIndicator cleanerIndicator;
@@ -26,6 +27,7 @@ public class GameLogic : MonoBehaviour
     private static string[] temperatures = { "Freezing", "Cold", "Normal", "Hot", "Hell" };
 
     [HideInInspector] public int currentPhase = 0;
+    private bool endlessMode = false;
     [HideInInspector] public int score = 0;
     private List<GameMaterial> materialPool = new List<GameMaterial>();
 
@@ -47,7 +49,8 @@ public class GameLogic : MonoBehaviour
         progressBarManager.Hide();
         continueButton.gameObject.SetActive(false);
         manualHandler.AddMaterials(phases[currentPhase].materials);
-        DOVirtual.DelayedCall(2f, StartRound);
+
+        cinematicsManager.ShowStartCinematic(StartRound);
     }
 
     private void StartRound()
@@ -55,7 +58,10 @@ public class GameLogic : MonoBehaviour
         GamePhase phase = phases[currentPhase];
         controlPanel.Show();
         cleanerPicker.Show();
-        progressBarManager.ShowSmall();
+        if (!endlessMode)
+        {
+            progressBarManager.ShowSmall();
+        }
         clothesManager.clothesState = ClothesState.CanBeSelected;
 
         // Make first wash only 1 clothing item ????
@@ -82,7 +88,11 @@ public class GameLogic : MonoBehaviour
         {
             if (materialPool == null || materialPool.Count == 0)
             {
-                materialPool = new List<GameMaterial>(phase.materials);
+                materialPool = new List<GameMaterial>();
+                for (int p = currentPhase; p >= 0; p--)
+                {
+                    materialPool.AddRange(phases[p].materials);
+                }
 
                 // Don't shuffle on the first cycle, it acts as a tutorial
                 if (currentPhase == 0 && isFirstMaterialPoolCycle)
@@ -198,21 +208,29 @@ public class GameLogic : MonoBehaviour
 
         clothesManager.clothesState = ClothesState.ShowsResult;
         clothesManager.Show();
-        progressBarManager.ShowBig();
-        progressBarManager.AnimateTo(Mathf.Min((float)score / phases[currentPhase].targetScore, 1f));
+        if (!endlessMode)
+        {
+            progressBarManager.ShowBig();
+            progressBarManager.AnimateTo(Mathf.Min((float)score / phases[currentPhase].targetScore, 1f));
+        }
 
-        if (score >= phases[currentPhase].targetScore)
+        if (!endlessMode && score >= phases[currentPhase].targetScore)
         {
             // Move to the next phase
             Debug.Log($"Congratulations! You've reached the target score of {phases[currentPhase].targetScore} for phase {currentPhase + 1}. Moving to the next phase.");
             score -= phases[currentPhase].targetScore;
-            currentPhase++;
-            if (currentPhase >= phases.Length)
+            if (currentPhase >= (phases.Length - 1))
             {
                 Debug.Log("Congratulations! You've completed all phases of the game!");
+                cinematicsManager.ShowEndCinematic(() =>
+                {
+                    endlessMode = true;
+                    StartRound(); // Restart the game
+                });
                 return; // End the game or reset to the first phase
             }
 
+            currentPhase++;
             DOVirtual.DelayedCall(2f, UnlockCleaner);
         }
         else
