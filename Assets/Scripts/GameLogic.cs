@@ -225,7 +225,7 @@ public class GameLogic : MonoBehaviour
                 score += phases[currentPhase].correctScore;
                 correctClothes++;
                 item.errorMessage = "";
-                manualHandler.AddCombination(item.gameMaterial, tempDial.Value, cleanerPicker.Value[0]);
+                item.isNewCombination = manualHandler.AddCombination(item.gameMaterial, tempDial.Value, cleanerPicker.Value[0]);
                 Debug.Log($"Successfully cleaned {item.gameMaterial.name} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
             }
             else

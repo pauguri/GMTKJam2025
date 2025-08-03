@@ -29,6 +29,7 @@ public class ClothingItem : MonoBehaviour
     [SerializeField] private GameObject dirtySpotCanvas;
 
     [HideInInspector] public string errorMessage;
+    [HideInInspector] public bool isNewCombination = false;
     //private Animator animator;
     private bool isSelected = false;
     private bool isHovered = false;

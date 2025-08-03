@@ -42,18 +42,22 @@ public class ManualHandler : MonoBehaviour
         UpdateManual();
     }
 
-    public void AddCombination(GameMaterial material, int temperatureIndex, int cleanerIndex)
+    public bool AddCombination(GameMaterial material, int temperatureIndex, int cleanerIndex)
     {
         if (!combinations.ContainsKey(material))
         {
             combinations[material] = new List<Vector2Int>() { new Vector2Int(temperatureIndex, cleanerIndex) };
+            UpdateManual();
+            return true;
         }
-        else
+        else if (!combinations[material].Contains(new Vector2Int(temperatureIndex, cleanerIndex)))
         {
             combinations[material].Add(new Vector2Int(temperatureIndex, cleanerIndex));
+            UpdateManual();
+            return true;
         }
 
-        UpdateManual();
+        return false;
     }
 
     private void UpdateManual()
