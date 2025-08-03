@@ -133,7 +133,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 29eb5a2da3dd7c14482e1c4991b8fc13, type: 2}
     freezingMessages:
     - 
-    - not tasty
+    - is not tasty
     - 
     - has evaporated
     - has evaporated
@@ -183,7 +183,7 @@ MonoBehaviour:
     normalMessages:
     - smells bad
     - 
-    - it's still dry
+    - is still dry
     - 
     - 
     hotMessages:
