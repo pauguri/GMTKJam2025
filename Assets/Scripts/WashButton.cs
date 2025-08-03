@@ -7,6 +7,7 @@ public class WashButton : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Outline outline;
+    [SerializeField] private AudioSource pressButtonSound;
     public Action onClick;
     private bool isEnabled = false;
     private bool isHovered = false;
@@ -52,7 +53,9 @@ public class WashButton : MonoBehaviour
         {
             animator.SetTrigger("Click");
             onClick?.Invoke();
+            pressButtonSound.Play();
         }
+        
     }
 
     private void OnDestroy()
