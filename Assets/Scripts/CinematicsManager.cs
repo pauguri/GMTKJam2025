@@ -7,6 +7,8 @@ public class CinematicsManager : MonoBehaviour
     [SerializeField] private CanvasGroup startCinematic;
     [SerializeField] private CanvasGroup startCinematicImage;
     [SerializeField] private CanvasGroup endCinematic;
+    [SerializeField] private TextButton endCinematicContinue;
+    [SerializeField] private TextButton endCinematicExit;
 
     private Action endCinematicCallback = null;
 
@@ -18,6 +20,9 @@ public class CinematicsManager : MonoBehaviour
         startCinematicImage.alpha = 0f;
         endCinematic.alpha = 0f;
         endCinematic.blocksRaycasts = false;
+
+        endCinematicContinue.onClick += HideEndCinematic;
+        endCinematicExit.onClick += QuitGame;
     }
 
     public void ShowStartCinematic(Action callback)
@@ -60,5 +65,14 @@ public class CinematicsManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void OnDestroy()
+    {
+        if (endCinematicContinue != null)
+        {
+            endCinematicContinue.onClick -= HideEndCinematic;
+        }
+        endCinematicExit.onClick -= QuitGame;
     }
 }
