@@ -10,7 +10,7 @@ public class ClothingItem : MonoBehaviour
     [SerializeField] private Modifiers modifiersData;
     [SerializeField] private MeshRenderer meshRenderer;
     [Space]
-    [SerializeField] private Canvas smallLabelCanvas;
+    [SerializeField] private GameObject smallLabelCanvas;
     [SerializeField] private TextMeshProUGUI brandText;
     [SerializeField] private Image materialIcon;
     [SerializeField] private Image extraImage1;
@@ -21,11 +21,12 @@ public class ClothingItem : MonoBehaviour
     [HideInInspector] public GameMaterial gameMaterial;
     public ClothesManager clothesManager;
     [SerializeField] private Outline outline;
-
     [Space]
-    [SerializeField] private Canvas largeLabelCanvas;
+    [SerializeField] private GameObject largeLabelCanvas;
     [SerializeField] private Image largeMaterialIcon;
     [SerializeField] private TextMeshProUGUI errorText;
+    [Space]
+    [SerializeField] private GameObject dirtySpotCanvas;
 
     [HideInInspector] public string errorMessage;
     //private Animator animator;
@@ -140,28 +141,31 @@ public class ClothingItem : MonoBehaviour
         if (clothesManager == null || clothesManager.clothesState == ClothesState.CanBeSelected)
         {
             meshRenderer.enabled = true;
-            smallLabelCanvas.gameObject.SetActive(true);
+            smallLabelCanvas.SetActive(true);
+            dirtySpotCanvas.SetActive(true);
 
-            largeLabelCanvas.gameObject.SetActive(false);
+            largeLabelCanvas.SetActive(false);
         }
         else
         {
             if (string.IsNullOrEmpty(errorMessage))
             {
                 meshRenderer.enabled = true;
-                smallLabelCanvas.gameObject.SetActive(true);
+                smallLabelCanvas.SetActive(true);
                 // TODO: sparkles particle system
 
-                largeLabelCanvas.gameObject.SetActive(false);
+                largeLabelCanvas.SetActive(false);
             }
             else
             {
                 errorText.text = errorMessage;
-                largeLabelCanvas.gameObject.SetActive(true);
+                largeLabelCanvas.SetActive(true);
 
                 meshRenderer.enabled = false;
-                smallLabelCanvas.gameObject.SetActive(false);
+                smallLabelCanvas.SetActive(false);
             }
+
+            dirtySpotCanvas.SetActive(false);
         }
         transform.DOLocalMoveY(0f, 0.5f).SetEase(Ease.OutExpo);
         transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutExpo);
