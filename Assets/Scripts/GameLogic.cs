@@ -183,18 +183,19 @@ public class GameLogic : MonoBehaviour
             string matrixCell = materialMatrix[tempDial.Value][cleanerPicker.Value[0]];
             if (string.IsNullOrEmpty(matrixCell))
             {
-                score++;
+                score += phases[currentPhase].correctScore;
+                correctClothes++;
                 item.errorMessage = "";
                 manualHandler.AddCombination(item.gameMaterial, tempDial.Value, cleanerPicker.Value[0]);
                 Debug.Log($"Successfully cleaned {item.gameMaterial.name} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
             }
             else
             {
-                //score--;
-                //if (score < 0)
-                //{
-                //    score = 0;
-                //}
+                score -= phases[currentPhase].wrongScore;
+                if (score < 0)
+                {
+                    score = 0;
+                }
                 item.errorMessage = $"It {matrixCell}.";
                 Debug.Log($"The {item.gameMaterial.name} shirt {matrixCell}. Score: {score}");
             }
@@ -203,7 +204,7 @@ public class GameLogic : MonoBehaviour
         if (correctClothes > 1)
         {
             // Combo for washing multiple clothes at once
-            score += correctClothes - 1;
+            score += phases[correctClothes].extraClothesScore;
         }
 
         clothesManager.clothesState = ClothesState.ShowsResult;
