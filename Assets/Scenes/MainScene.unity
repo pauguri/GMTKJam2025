@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de80b330850e484b87a16e7d39a72e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: Keep Washinh
+  buttonText: Keep Washing
 --- !u!1 &12366285
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,7 +4959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de80b330850e484b87a16e7d39a72e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: Keep Washinh
+  buttonText: Exit
 --- !u!114 &1794294330
 MonoBehaviour:
   m_ObjectHideFlags: 0
