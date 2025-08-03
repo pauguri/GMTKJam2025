@@ -222,10 +222,10 @@ public class GameLogic : MonoBehaviour
             string matrixCell = materialMatrix[tempDial.Value][cleanerPicker.Value[0]];
             if (string.IsNullOrEmpty(matrixCell))
             {
-                score += phases[currentPhase].correctScore;
+                item.isNewCombination = manualHandler.AddCombination(item.gameMaterial, tempDial.Value, cleanerPicker.Value[0]);
+                score += item.isNewCombination ? phases[currentPhase].correctNewComboScore : phases[currentPhase].correctRepeatedComboScore;
                 correctClothes++;
                 item.errorMessage = "";
-                item.isNewCombination = manualHandler.AddCombination(item.gameMaterial, tempDial.Value, cleanerPicker.Value[0]);
                 Debug.Log($"Successfully cleaned {item.gameMaterial.name} with {cleanersData.cleaners[cleanerPicker.Value[0]]} at {temperatures[tempDial.Value]} temperature. Score: {score}");
             }
             else
