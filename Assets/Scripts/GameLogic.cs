@@ -218,7 +218,6 @@ public class GameLogic : MonoBehaviour
     private void ShowResults()
     {
         int correctClothes = 0;
-        int wrongClothes = 0;
         foreach (ClothingItem item in clothesManager.SelectedClothes)
         {
             string[][] materialMatrix = item.gameMaterial.GetMatrix();
@@ -239,7 +238,6 @@ public class GameLogic : MonoBehaviour
                 {
                     score = 0;
                 }
-                wrongClothes++;
                 item.errorMessage = $"It {matrixCell}.";
                 Debug.Log($"The {item.gameMaterial.name} shirt {matrixCell}. Score: {score}");
             }
@@ -251,13 +249,13 @@ public class GameLogic : MonoBehaviour
             score += phases[correctClothes].extraClothesScore;
         }
 
-        if (wrongClothes == 0)
+        if (correctClothes == 0)
         {
-            successWashAudio.Play();
+            failureWashAudio.Play();
         }
         else
         {
-            failureWashAudio.Play();
+            successWashAudio.Play();
         }
 
         clothesManager.clothesState = ClothesState.ShowsResult;
