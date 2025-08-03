@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class TemperatureDial : MonoBehaviour
 {
     [SerializeField] private Outline outline;
+    [SerializeField] private AudioSource audioSource;
     private bool isHolding = false;
     private bool isHovered = false;
     private Vector2 startPoint;
@@ -80,6 +81,7 @@ public class TemperatureDial : MonoBehaviour
         if (newSnappedPosition != snappedPosition)
         {
             transform.DOLocalRotate(new Vector3(0, 0, newSnappedPosition * (-180 / 4)), 0.1f).SetEase(Ease.OutBack);
+            audioSource.Play();
             snappedPosition = newSnappedPosition;
         }
     }
