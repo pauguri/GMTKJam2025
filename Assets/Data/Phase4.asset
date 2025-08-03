@@ -20,25 +20,25 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 294f64de228893f439402c8a82a5f42f, type: 2}
     - {fileID: 2100000, guid: a8a7bb4701f187b49896f2e6ffd9f5a2, type: 2}
     freezingMessages:
-    - it has changed of colour
+    - has changed of colour
     - 
     - has been frozen
     - has disintegrated
     - 
     coldMessages:
-    - it has changed of colour
+    - has changed of colour
     - 
     - 
     - has disintegrated
     - 
     normalMessages:
-    - it has changed of colour
+    - has changed of colour
     - 
     - 
     - has disintegrated
     - 
     hotMessages:
-    - it has changed of colour
+    - has changed of colour
     - 
     - 
     - has disintegrated
