@@ -16,7 +16,7 @@ public class ManualHandler : MonoBehaviour
     private Dictionary<GameMaterial, List<Vector2Int>> combinations = new Dictionary<GameMaterial, List<Vector2Int>>();
     private VisualElement rootElement;
 
-    private void Start()
+    private void Awake()
     {
         var document = GetComponent<UIDocument>();
         if (document == null)
@@ -26,7 +26,6 @@ public class ManualHandler : MonoBehaviour
         }
 
         rootElement = document.rootVisualElement;
-
         rootElement.Q<Button>("CloseButton").clicked += Hide;
     }
 
