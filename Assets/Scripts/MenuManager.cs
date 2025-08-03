@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private RectTransform slidingMenu;
     [SerializeField] private RectTransform mainBubbles;
     [SerializeField] private RectTransform secondaryBubbles;
+    [SerializeField] private AudioSource bubblesMenu;
     private bool starting = false;
 
     private void Start()
@@ -18,6 +19,7 @@ public class MenuManager : MonoBehaviour
     {
         if (starting) return; // Prevent multiple clicks while starting
         starting = true;
+        bubblesMenu.Play();
 
         var sequence = DOTween.Sequence();
         sequence.Insert(0, mainBubbles.DOAnchorPosY(0, 2f));
