@@ -202,7 +202,8 @@ MonoBehaviour:
   modifiers: 
   targetScore: 16
   shownClothes: 3
-  correctScore: 2
+  correctNewComboScore: 3
+  correctRepeatedComboScore: 1
   wrongScore: -2
   extraClothesScore: 1
   progressBarIcon: {fileID: 21300000, guid: 4c1262be92a37dd489f6b40a8c9b82e3, type: 3}

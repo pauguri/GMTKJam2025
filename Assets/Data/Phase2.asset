@@ -200,9 +200,10 @@ MonoBehaviour:
     - has burned to ashes
     allowedModifiers: 
   modifiers: 
-  targetScore: 12
+  targetScore: 14
   shownClothes: 2
-  correctScore: 2
+  correctNewComboScore: 3
+  correctRepeatedComboScore: 1
   wrongScore: -1
   extraClothesScore: 1
   progressBarIcon: {fileID: 21300000, guid: eea7e44a20b62b545a1de7318caa8b12, type: 3}
