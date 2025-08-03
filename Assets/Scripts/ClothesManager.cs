@@ -9,6 +9,7 @@ public class ClothesManager : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints2;
     [SerializeField] private Transform[] spawnPoints3;
     [SerializeField] private Transform[] spawnPoints4;
+    [SerializeField] AudioSource selectClothesSound;
     private Transform[][] indexedSpawnPoints;
     [HideInInspector] public int shownClothes = 1;
     [HideInInspector] public ClothesState clothesState = ClothesState.CanBeSelected;
@@ -44,6 +45,7 @@ public class ClothesManager : MonoBehaviour
         if (selectedClothes.Contains(item)) return;
         selectedClothes.Add(item);
         onUpdateSelected?.Invoke(SelectedClothes);
+        selectClothesSound.Play();
     }
 
     public void HandleDeselectItem(ClothingItem item)
