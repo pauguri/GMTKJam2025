@@ -16,7 +16,9 @@ MonoBehaviour:
   - name: Mermaid Scales
     description: Was she singing when she was capturated?
     icon: {fileID: 21300000, guid: 263708e9b411aed4bbe268c15d1e14a8, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: 2f7d7b5a6aceddd40ad952a102f7d0e8, type: 2}
+    - {fileID: 2100000, guid: a03ce898692423945aeb9161e46e49b2, type: 2}
     freezingMessages:
     - 
     - 
@@ -192,6 +194,9 @@ MonoBehaviour:
   modifiers: 
   targetScore: 4
   shownClothes: 2
+  correctScore: 1
+  wrongScore: -1
+  extraClothesScore: 1
   progressBarIcon: {fileID: 21300000, guid: 4c1262be92a37dd489f6b40a8c9b82e3, type: 3}
   progressBarGradient: {fileID: 21300000, guid: 54f5bb7b0412fac4ba8ee0d2c28c027e, type: 3}
   progressBarPattern: {fileID: 21300000, guid: 158607331a459034cb374b1c05af397f, type: 3}
