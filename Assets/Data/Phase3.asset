@@ -54,7 +54,9 @@ MonoBehaviour:
     description: It would be perfect for a meeting with your boss, they are literally
       born with the style
     icon: {fileID: 21300000, guid: 1191c6b6376c10047862a8c3d1b38f55, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: 3f259ac8bc29cde42a7bcc46a9261b1d, type: 2}
+    - {fileID: 2100000, guid: 97b95e8432c906d438a80faa6d061f05, type: 2}
     freezingMessages:
     - has frozen
     - 
@@ -89,7 +91,9 @@ MonoBehaviour:
   - name: Polar Bear Fur
     description: I would love to go the the antartica to see one in real life.
     icon: {fileID: 21300000, guid: 65bf9c09a00dac440a6bd91310b03c9d, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: c4d4d36d064a9e34a8a59e7de5ae1110, type: 2}
+    - {fileID: 2100000, guid: 6a2b0861d302da54893a1e8375d21019, type: 2}
     freezingMessages:
     - 
     - 
@@ -124,7 +128,9 @@ MonoBehaviour:
   - name: Ice Cream
     description: Creamy as always, it feels like summer!
     icon: {fileID: 21300000, guid: 723f4f2df691a6346ad4fa1ca9015ddc, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: 95d2a1de956054d4db3dc72557aeed25, type: 2}
+    - {fileID: 2100000, guid: 29eb5a2da3dd7c14482e1c4991b8fc13, type: 2}
     freezingMessages:
     - 
     - not tasty
@@ -159,7 +165,9 @@ MonoBehaviour:
   - name: Cactus
     description: This reminds me too much to the desert, I hate the sand
     icon: {fileID: 21300000, guid: 8951a97e24a744943a0c7c66c7cfb382, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: d0980373f57541b499be89a8937c70c4, type: 2}
+    - {fileID: 2100000, guid: 88cb2bb31f24da54fa3609067b142c2d, type: 2}
     freezingMessages:
     - has dried
     - 

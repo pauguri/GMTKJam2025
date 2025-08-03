@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Animator))]
 public class CleanerBottle : MonoBehaviour
 {
+    [SerializeField] private AudioSource bottleSelector;
     private Outline outline;
     private Animator animator;
     public int index = 0;
@@ -57,6 +58,7 @@ public class CleanerBottle : MonoBehaviour
         if (cleanerPicker.canInteract && isHovered && context.canceled)
         {
             SetSelected(!isSelected);
+            bottleSelector.Play();
         }
     }
 
