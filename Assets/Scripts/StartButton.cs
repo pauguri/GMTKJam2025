@@ -7,6 +7,7 @@ public class StartButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     private RectTransform rectTransform;
     [SerializeField] private MenuManager menuManager;
+    [SerializeField] private AudioSource startMenuButton;
 
     private void Start()
     {
@@ -37,5 +38,6 @@ public class StartButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         sequence.Append(rectTransform.DORotate(new Vector3(0, 0, 10), 0.15f).SetEase(Ease.OutBack));
         sequence.Insert(0.15f, rectTransform.DOScale(1f, 0.2f).SetEase(Ease.OutBack));
         menuManager.StartGame();
+        startMenuButton.Play();
     }
 }
