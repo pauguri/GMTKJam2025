@@ -191,7 +191,7 @@ public class GameLogic : MonoBehaviour
             }
             else
             {
-                score -= phases[currentPhase].wrongScore;
+                score += phases[currentPhase].wrongScore;
                 if (score < 0)
                 {
                     score = 0;
