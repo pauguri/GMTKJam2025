@@ -31,6 +31,10 @@ public class ClothingItem : MonoBehaviour
     [SerializeField] private GameObject comboCanvas;
     [SerializeField] private Image comboCleaner;
     [SerializeField] private Image comboTemperature;
+    [Space]
+    [SerializeField] private ParticleSystem dirtyParticles;
+    [SerializeField] private ParticleSystem correctParticles;
+    [SerializeField] private ParticleSystem wrongParticles;
 
     [HideInInspector] public string errorMessage;
     [HideInInspector] public bool isNewCombination = false;
@@ -140,6 +144,7 @@ public class ClothingItem : MonoBehaviour
     {
         transform.DOLocalMoveY(-10f, 0.5f).SetEase(Ease.InExpo);
         transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InExpo);
+        dirtyParticles.Stop();
     }
 
     public void Show(Sprite temperatureIcon, Sprite cleanerIcon)
@@ -163,11 +168,20 @@ public class ClothingItem : MonoBehaviour
 
                 largeLabelCanvas.SetActive(false);
 
+                var sequence = DOTween.Sequence();
+                sequence.Insert(0f, transform.DOLocalMoveY(0f, 0.5f).SetEase(Ease.OutExpo));
+                sequence.Insert(0f, transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutExpo));
+
                 if (isNewCombination)
                 {
                     comboCleaner.sprite = cleanerIcon;
                     comboTemperature.sprite = temperatureIcon;
-                    comboCanvas.SetActive(true);
+
+                    sequence.InsertCallback(1f, () =>
+                    {
+                        comboCanvas.SetActive(true);
+                        correctParticles.Play();
+                    });
                 }
                 else
                 {
@@ -177,18 +191,24 @@ public class ClothingItem : MonoBehaviour
             else
             {
                 errorText.text = errorMessage;
-                largeLabelCanvas.SetActive(true);
 
                 meshRenderer.enabled = false;
                 smallLabelCanvas.SetActive(false);
                 comboCanvas.SetActive(false);
+
+                var sequence = DOTween.Sequence();
+                sequence.Insert(1f, transform.DOLocalMoveY(0f, 0f));
+                sequence.Insert(1f, transform.DOScale(Vector3.one, 0f));
+                sequence.AppendCallback(() =>
+                {
+                    largeLabelCanvas.SetActive(true);
+                    wrongParticles.Play();
+                });
             }
 
             outline.enabled = false;
             dirtySpotCanvas.SetActive(false);
         }
-        transform.DOLocalMoveY(0f, 0.5f).SetEase(Ease.OutExpo);
-        transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutExpo);
     }
 
     public void Discard()
@@ -196,7 +216,7 @@ public class ClothingItem : MonoBehaviour
         var sequence = DOTween.Sequence();
         sequence.Insert(0f, transform.DOMove(new Vector3(0, 0, 50f), 0.8f).SetEase(Ease.InExpo));
         sequence.Insert(0f, transform.DOScale(Vector3.zero, 0.8f).SetEase(Ease.InExpo));
-        //sequence.AppendCallback(() => Destroy(gameObject));
+        dirtyParticles.Stop();
     }
 
     private void OnDestroy()
