@@ -6,7 +6,8 @@ public class PlayerInputHook : MonoBehaviour
 {
     public static PlayerInputHook Instance { get; private set; }
     public Action<InputAction.CallbackContext> ClickEvent;
-    public Vector2 mousePosition;
+    public Action<InputAction.CallbackContext> PauseEvent;
+    [HideInInspector] public Vector2 mousePosition;
     public RaycastHit raycastHit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,5 +34,10 @@ public class PlayerInputHook : MonoBehaviour
     public void OnClick(InputAction.CallbackContext context)
     {
         ClickEvent?.Invoke(context);
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        PauseEvent?.Invoke(context);
     }
 }
