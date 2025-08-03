@@ -52,23 +52,30 @@ public class ClothesManager : MonoBehaviour
         onUpdateSelected?.Invoke(SelectedClothes);
     }
 
-    public void Hide()
+    public void HideSelectedAndDiscardRest()
     {
         foreach (ClothingItem item in clothes)
         {
-            item.Hide();
+            if (selectedClothes.Contains(item))
+            {
+                item.Hide();
+            }
+            else
+            {
+                item.Discard();
+            }
         }
     }
 
-    public void Show()
+    public void ShowSelected()
     {
-        foreach (ClothingItem item in clothes)
+        foreach (ClothingItem item in selectedClothes)
         {
             item.Show();
         }
     }
 
-    public void Discard()
+    public void DiscardAll()
     {
         foreach (ClothingItem item in clothes)
         {
@@ -78,6 +85,11 @@ public class ClothesManager : MonoBehaviour
 
     public void Clear()
     {
+        foreach (ClothingItem item in clothes)
+        {
+            Destroy(item.gameObject);
+        }
+
         clothes.Clear();
         selectedClothes.Clear();
         onUpdateSelected?.Invoke(SelectedClothes);

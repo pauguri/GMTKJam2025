@@ -167,7 +167,7 @@ public class GameLogic : MonoBehaviour
 
         cleanerPicker.Hide();
         progressBarManager.Hide();
-        clothesManager.Hide();
+        clothesManager.HideSelectedAndDiscardRest();
         controlPanel.Hide();
 
         washingMachine.SetTrigger("Run");
@@ -208,7 +208,7 @@ public class GameLogic : MonoBehaviour
         }
 
         clothesManager.clothesState = ClothesState.ShowsResult;
-        clothesManager.Show();
+        clothesManager.ShowSelected();
         if (!endlessMode)
         {
             progressBarManager.ShowBig();
@@ -248,7 +248,7 @@ public class GameLogic : MonoBehaviour
     {
         unlockOverlay.Show(phases[currentPhase]);
         progressBarManager.Hide();
-        clothesManager.Discard();
+        clothesManager.DiscardAll();
         cleanerPicker.Clear();
         cleanerPicker.UnlockBottle(currentPhase);
         manualHandler.AddMaterials(phases[currentPhase].materials);
@@ -278,7 +278,7 @@ public class GameLogic : MonoBehaviour
         continueButton.gameObject.SetActive(false);
 
         progressBarManager.Hide();
-        clothesManager.Discard();
+        clothesManager.DiscardAll();
         cleanerPicker.Clear();
 
         DOVirtual.DelayedCall(2f, StartRound);

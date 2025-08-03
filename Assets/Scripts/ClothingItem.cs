@@ -175,8 +175,8 @@ public class ClothingItem : MonoBehaviour
     {
         var sequence = DOTween.Sequence();
         sequence.Insert(0f, transform.DOMove(new Vector3(0, 0, 50f), 0.8f).SetEase(Ease.InExpo));
-        sequence.Insert(0f, transform.DOScale(Vector3.zero, 0.8f).SetEase(Ease.InExpo).OnComplete(() => Destroy(gameObject)));
-        sequence.AppendCallback(() => Destroy(gameObject));
+        sequence.Insert(0f, transform.DOScale(Vector3.zero, 0.8f).SetEase(Ease.InExpo));
+        //sequence.AppendCallback(() => Destroy(gameObject));
     }
 
     private void OnDestroy()
