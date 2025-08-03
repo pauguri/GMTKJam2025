@@ -144,19 +144,19 @@ MonoBehaviour:
     - has disintegrated
     - has been magically destroyed
     normalMessages:
-    - lost its magic
+    - has lost its magic
     - 
     - 
     - has disintegrated
     - 
     hotMessages:
-    - lost its magic
+    - has lost its magic
     - has burned to ashes
     - 
     - has disintegrated
     - has been magically destroyed
     hellMessages:
-    - lost its magic
+    - has lost its magic
     - has burned to ashes
     - has burned to ashes
     - has disintegrated

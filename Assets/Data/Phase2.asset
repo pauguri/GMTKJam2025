@@ -20,13 +20,13 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 8ab965a5696f14d4b99d80bfe9be9f52, type: 2}
     - {fileID: 2100000, guid: 9ccc579b30b396b41b478ca7aea51f96, type: 2}
     freezingMessages:
-    - not tasty
-    - not tasty
+    - is not tasty
+    - is not tasty
     - has been frozen
     - has disintegrated
     - 
     coldMessages:
-    - not tasty
+    - is not tasty
     - 
     - has been frozen
     - has disintegrated
@@ -58,13 +58,13 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 73a09ced6d3ff5e45ab5ae769beaa36f, type: 2}
     - {fileID: 2100000, guid: be9832199f2b689489855b48958690ac, type: 2}
     freezingMessages:
-    - not tasty
+    - is not tasty
     - 
     - has been frozen
     - has evaporated
     - 
     coldMessages:
-    - not tasty
+    - is not tasty
     - 
     - 
     - has evaporated
@@ -95,15 +95,15 @@ MonoBehaviour:
     - {fileID: 2100000, guid: cbbfa08fdba3c22408bb38fb213a4dc1, type: 2}
     - {fileID: 2100000, guid: 8b2bbeb76f2345947a304ec8a911ebb8, type: 2}
     freezingMessages:
-    - it's hard as a rock
-    - it's hard as a rock
-    - it's hard as a rock
+    - is hard as a rock
+    - is hard as a rock
+    - is hard as a rock
     - 
     - 
     coldMessages:
-    - it's hard as a rock
+    - is hard as a rock
     - 
-    - it's hard as a rock
+    - is hard as a rock
     - melts
     - 
     normalMessages:
@@ -175,13 +175,13 @@ MonoBehaviour:
     - has been frozen
     - 
     coldMessages:
-    - not tasty
+    - is not tasty
     - 
     - 
     - 
     - 
     normalMessages:
-    - not tasty
+    - is not tasty
     - 
     - 
     - 
