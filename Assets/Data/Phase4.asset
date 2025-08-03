@@ -16,7 +16,9 @@ MonoBehaviour:
   - name: Superhero Spandex
     description: My favorite one is Superman!
     icon: {fileID: 21300000, guid: f80eadd7985c7a640a734b101cf80123, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: 294f64de228893f439402c8a82a5f42f, type: 2}
+    - {fileID: 2100000, guid: a8a7bb4701f187b49896f2e6ffd9f5a2, type: 2}
     freezingMessages:
     - it has changed of colour
     - 
@@ -52,7 +54,9 @@ MonoBehaviour:
     description: Those little creatures look cute, but I wish they're only a quick
       trend.
     icon: {fileID: 21300000, guid: ec337b19385fe3e4ebfac7ac0894fa3e, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: 7df72fc4877892c408055fb0c31b2b9b, type: 2}
+    - {fileID: 2100000, guid: 01165d5680a8fab449e120526ac606b7, type: 2}
     freezingMessages:
     - has been magically vanished
     - 
@@ -87,7 +91,9 @@ MonoBehaviour:
   - name: Uranium Essence
     description: Radioactive!
     icon: {fileID: 21300000, guid: 2b5c94b4eb62fb540b870cb68ad9e685, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: 24f76d65b0b5879449f86fa63941d006, type: 2}
+    - {fileID: 2100000, guid: 892b5faf9967eba41aac6bb4243e979b, type: 2}
     freezingMessages:
     - 
     - is too slippery
@@ -122,7 +128,9 @@ MonoBehaviour:
   - name: Kryptonite
     description: I hope this never hits my favorite super hero.
     icon: {fileID: 21300000, guid: e8135c85a90f9cf49a5488dfa5dc26d0, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: fcc93d8e144824e4ebe1ee2ef95609b2, type: 2}
+    - {fileID: 2100000, guid: 46d905f8951768d4bb333475c7a72b62, type: 2}
     freezingMessages:
     - has spontaneously combusted
     - is too slippery
@@ -157,7 +165,9 @@ MonoBehaviour:
   - name: Alien Leather
     description: I don't understand why they call them the grays? If they are green
     icon: {fileID: 21300000, guid: 9ce7e889fab05df4992ff4e3c96b1132, type: 3}
-    materials: []
+    materials:
+    - {fileID: 2100000, guid: 33746a93814db10489bfe7a08f4e9a44, type: 2}
+    - {fileID: 2100000, guid: 436151a2502bfeb4f8d57118e48fd476, type: 2}
     freezingMessages:
     - still smells bad
     - 
@@ -192,6 +202,9 @@ MonoBehaviour:
   modifiers: 
   targetScore: 4
   shownClothes: 2
+  correctScore: 1
+  wrongScore: -1
+  extraClothesScore: 1
   progressBarIcon: {fileID: 21300000, guid: 2a982ab5ced5b1b47a188183cef3ebde, type: 3}
   progressBarGradient: {fileID: 21300000, guid: eab2ee7e522176f4ab9427c6a7ce3b13, type: 3}
   progressBarPattern: {fileID: 21300000, guid: 7906224e362e770469a08fac37405c71, type: 3}
