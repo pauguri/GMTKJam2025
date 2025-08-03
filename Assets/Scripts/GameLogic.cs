@@ -17,7 +17,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private LightIndicator clothesIndicator;
     [SerializeField] private LightIndicator cleanerIndicator;
     [SerializeField] private WashButton washButton;
-    [SerializeField] private Animator washingMachine;
+    [SerializeField] private WashingMachine washingMachine;
     [SerializeField] private TextButton continueButton;
     [SerializeField] private UnlockOverlay unlockOverlay;
     [Space]
@@ -209,7 +209,7 @@ public class GameLogic : MonoBehaviour
             tutorialManager.Hide();
         }
 
-        washingMachine.SetTrigger("Run");
+        washingMachine.Wash();
         DOVirtual.DelayedCall(3f, ShowResults);
     }
 

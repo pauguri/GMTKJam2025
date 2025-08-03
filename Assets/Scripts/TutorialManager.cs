@@ -12,6 +12,6 @@ public class TutorialManager : MonoBehaviour
 
     public void Hide()
     {
-        canvasGroup.DOFade(0f, 1f);
+        canvasGroup.DOFade(0f, 0.5f);
     }
 }
