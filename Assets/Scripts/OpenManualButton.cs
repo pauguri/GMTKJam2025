@@ -27,7 +27,7 @@ public class OpenManualButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         var sequence = DOTween.Sequence();
         sequence.Insert(0, rectTransform.DOScale(0.8f, 0.2f).SetEase(Ease.OutBack));
-        sequence.Insert(0.15f, rectTransform.DOScale(1f, 0.2f).SetEase(Ease.OutBack));
-        manualHandler.Open();
+        sequence.Insert(0.15f, rectTransform.DOScale(0.9f, 0.2f).SetEase(Ease.OutBack));
+        manualHandler.Show();
     }
 }

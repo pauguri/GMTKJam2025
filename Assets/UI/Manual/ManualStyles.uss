@@ -1,0 +1,15 @@
+.hidden {
+    right: -640px;
+}
+
+.shown {
+    right: 0;
+}
+
+#CloseButton:hover {
+    scale: 1 1;
+}
+
+#CloseButton {
+    scale: 0.9 0.9;
+}

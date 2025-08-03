@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Combination-More" style="align-items: center; flex-direction: row; flex-basis: initial; border-top-width: 0; border-left-width: 0; border-right-width: 0; border-bottom-width: 0; border-top-right-radius: 20px; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; flex-grow: 0; flex-shrink: 0; border-left-color: rgb(162, 162, 162); border-right-color: rgb(162, 162, 162); border-top-color: rgb(162, 162, 162); border-bottom-color: rgb(162, 162, 162); padding-top: 10px; padding-bottom: 10px; width: 40px; height: 60px;">
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/Manual/Interrogant.png?fileID=21300000&amp;guid=b28f2de8fa8c30d489ee22d3934ea958&amp;type=3#Interrogant&quot;); width: 40px; height: 40px; flex-shrink: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -46,6 +46,7 @@ public class GameLogic : MonoBehaviour
         progressBarManager.SetPercent(0f);
         progressBarManager.Hide();
         continueButton.gameObject.SetActive(false);
+        manualHandler.AddMaterials(phases[currentPhase].materials);
         DOVirtual.DelayedCall(2f, StartRound);
     }
 
@@ -57,7 +58,9 @@ public class GameLogic : MonoBehaviour
         progressBarManager.ShowSmall();
         clothesManager.clothesState = ClothesState.CanBeSelected;
 
-        int amountToGenerate = isFirstWash ? 1 : phase.shownClothes;
+        // Make first wash only 1 clothing item ????
+        //int amountToGenerate = isFirstWash ? 1 : phase.shownClothes;
+        int amountToGenerate = phase.shownClothes;
         clothesManager.shownClothes = amountToGenerate;
 
         if (clothesManager.Clothes.Length > 0)
@@ -229,6 +232,7 @@ public class GameLogic : MonoBehaviour
         clothesManager.Discard();
         cleanerPicker.Clear();
         cleanerPicker.UnlockBottle(currentPhase);
+        manualHandler.AddMaterials(phases[currentPhase].materials);
 
         DOVirtual.DelayedCall(1f, () =>
         {
