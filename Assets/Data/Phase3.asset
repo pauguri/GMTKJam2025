@@ -200,7 +200,7 @@ MonoBehaviour:
     - has burned to ashes
     allowedModifiers: 01000000
   modifiers: 
-  targetScore: 16
+  targetScore: 22
   shownClothes: 3
   correctNewComboScore: 3
   correctRepeatedComboScore: 1
