@@ -8,6 +8,7 @@ public class ManualHandler : MonoBehaviour
     [SerializeField] private VisualTreeAsset materialCardTemplate;
     [SerializeField] private VisualTreeAsset combinationTemplate;
     [SerializeField] private VisualTreeAsset moreTemplate;
+    [SerializeField] private AudioSource audioSource;
     [Space]
     [SerializeField] private Cleaners cleanersData;
     [SerializeField] private Temperatures temperaturesData;
@@ -102,6 +103,7 @@ public class ManualHandler : MonoBehaviour
 
     public void Show()
     {
+        audioSource.Play();
         var manual = rootElement.Q<VisualElement>("Manual");
         manual.AddToClassList("shown");
         manual.RemoveFromClassList("hidden");
@@ -109,6 +111,7 @@ public class ManualHandler : MonoBehaviour
 
     public void Hide()
     {
+        audioSource.Play();
         var manual = rootElement.Q<VisualElement>("Manual");
         manual.AddToClassList("hidden");
         manual.RemoveFromClassList("shown");

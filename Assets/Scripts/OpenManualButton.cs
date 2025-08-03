@@ -7,7 +7,6 @@ public class OpenManualButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 {
     private RectTransform rectTransform;
     [SerializeField] ManualHandler manualHandler;
-    [SerializeField] AudioSource manualOpen;
 
     private void Start()
     {
@@ -30,6 +29,5 @@ public class OpenManualButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
         sequence.Insert(0, rectTransform.DOScale(0.8f, 0.2f).SetEase(Ease.OutBack));
         sequence.Insert(0.15f, rectTransform.DOScale(0.9f, 0.2f).SetEase(Ease.OutBack));
         manualHandler.Show();
-        manualOpen.Play();
     }
 }
