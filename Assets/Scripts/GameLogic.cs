@@ -265,7 +265,7 @@ public class GameLogic : MonoBehaviour
                 cinematicsManager.ShowEndCinematic(() =>
                 {
                     endlessMode = true;
-                    StartRound(); // Restart the game
+                    EndRound(true); // Restart the game
                 });
                 return; // End the game or reset to the first phase
             }
@@ -316,8 +316,16 @@ public class GameLogic : MonoBehaviour
 
     public void EndRound()
     {
-        continueButton.onClick -= EndRound;
-        continueButton.gameObject.SetActive(false);
+        EndRound(false);
+    }
+
+    public void EndRound(bool ignoreContinueButton)
+    {
+        if (!ignoreContinueButton)
+        {
+            continueButton.onClick -= EndRound;
+            continueButton.gameObject.SetActive(false);
+        }
 
         progressBarManager.Hide();
         clothesManager.DiscardAll();
