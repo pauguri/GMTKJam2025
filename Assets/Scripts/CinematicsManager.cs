@@ -30,7 +30,6 @@ public class CinematicsManager : MonoBehaviour
         startCinematic.blocksRaycasts = true;
 
         var sequence = DOTween.Sequence();
-        sequence.AppendInterval(1f);
         sequence.Append(startCinematicImage.DOFade(1f, 1f));
         sequence.AppendInterval(4f);
         sequence.Append(startCinematic.DOFade(0f, 1f));
@@ -73,6 +72,9 @@ public class CinematicsManager : MonoBehaviour
         {
             endCinematicContinue.onClick -= HideEndCinematic;
         }
-        endCinematicExit.onClick -= QuitGame;
+        if (endCinematicExit != null)
+        {
+            endCinematicExit.onClick -= QuitGame;
+        }
     }
 }
