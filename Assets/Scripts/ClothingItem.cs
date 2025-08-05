@@ -196,14 +196,10 @@ public class ClothingItem : MonoBehaviour
                 smallLabelCanvas.SetActive(false);
                 comboCanvas.SetActive(false);
 
-                var sequence = DOTween.Sequence();
-                sequence.Insert(1f, transform.DOLocalMoveY(0f, 0f));
-                sequence.Insert(1f, transform.DOScale(Vector3.one, 0f));
-                sequence.AppendCallback(() =>
-                {
-                    largeLabelCanvas.SetActive(true);
-                    wrongParticles.Play();
-                });
+                largeLabelCanvas.SetActive(true);
+                transform.localPosition = new Vector3(transform.localPosition.x, 0f, transform.localPosition.z);
+                transform.localScale = Vector3.one;
+                wrongParticles.Play();
             }
 
             outline.enabled = false;
